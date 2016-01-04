@@ -1,0 +1,9 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.sofiaframework.org/schema/sca"
+        elementFormDefault="qualified">
+
+	<import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912"/>
+
+	<include schemaLocation="sofia-1.0-binding.xsd"/>
+
+</schema>
