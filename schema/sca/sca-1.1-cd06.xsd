@@ -5,8 +5,6 @@
    targetNamespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" 
    xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912">
    
-   <include schemaLocation="sca-core-1.1-cd06.xsd"/>
-
    <include schemaLocation="http://docs.oasis-open.org/opencsa/sca-assembly/sca-interface-java-1.1-csd05.xsd"/>
    <include schemaLocation="http://docs.oasis-open.org/opencsa/sca-assembly/sca-interface-wsdl-1.1-cd06.xsd"/>
    <include schemaLocation="http://docs.oasis-open.org/opencsa/sca-assembly/sca-interface-cpp-1.1-cd06.xsd"/>
@@ -33,5 +31,5 @@
    <include schemaLocation="http://docs.oasis-open.org/opencsa/sca-assembly/sca-contribution-cpp-1.1-cd06.xsd"/>
    <include schemaLocation="http://docs.oasis-open.org/opencsa/sca-assembly/sca-contribution-c-1.1-cd06.xsd"/>
    <include schemaLocation="http://docs.oasis-open.org/opencsa/sca-assembly/sca-contribution-java-1.1-csd03.xsd"/>
-   
+   <include schemaLocation="sca-core-1.1-cd06.xsd"/>
 </schema>
