@@ -4,7 +4,7 @@
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     elementFormDefault="qualified">
 
-    <include schemaLocation="http://docs.oasis-open.org/opencsa/sca-assembly/sca-1.1-cd06.xsd"/>
+    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://docs.oasis-open.org/opencsa/sca-assembly/sca-1.1-cd06.xsd"/>
 
 	<element name="binding.rpc" type="sca:BaseRPCBinding" substitutionGroup="sca:binding"/>
 
