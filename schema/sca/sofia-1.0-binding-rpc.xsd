@@ -1,12 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
         xmlns:sofia="http://www.sofiaframework.org/schema/sca"
         xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
         targetNamespace="http://www.sofiaframework.org/schema/sca"
         elementFormDefault="qualified">
 
-        <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://docs.oasis-open.org/opencsa/sca-assembly/sca-contribution-1.1-cd06.xsd"/>
+    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://docs.oasis-open.org/opencsa/sca-assembly/sca-contribution-1.1-cd06.xsd"/>
 
-	<element name="binding.base" type="sofia:BaseRPCBinding" abstract="true" substitutionGroup="sca:binding"/>
+	<element name="binding.rpc" type="sofia:BaseRPCBinding" substitutionGroup="sca:binding"/>
 
 	<complexType name="BaseRPCBinding">
 		<complexContent>
@@ -30,15 +31,6 @@
 				</sequence>
 				<attribute name="uri" type="string" use="required"/>
 				<anyAttribute namespace="##any" processContents="lax" />
-			</extension>
-		</complexContent>
-	</complexType>
-
-	<element name="binding.rpc" type="sofia:RPCBinding"
-	         substitutionGroup="sofia:binding.base"/>
-	<complexType name="RPCBinding">
-		<complexContent>
-			<extension base="sofia:BaseRPCBinding">
 			</extension>
 		</complexContent>
 	</complexType>
