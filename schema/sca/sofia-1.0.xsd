@@ -6,5 +6,6 @@
 
 	<!--<include schemaLocation="sofia-1.0-binding.xsd"/>-->
         <include schemaLocation="sofia-sca-1.1-binding-jms.xsd"/>
+        <include schemaLocation="sofia-sca-1.1-binding-rest.xsd"/>
 
 </schema>
