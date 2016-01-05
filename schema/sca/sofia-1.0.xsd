@@ -2,8 +2,9 @@
         targetNamespace="http://www.sofiaframework.org/schema/sca"
         elementFormDefault="qualified">
 
-	<import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912"/>
+	<import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://docs.oasis-open.org/opencsa/sca-assembly/sca-1.1-cd06.xsd"/>
 
-	<include schemaLocation="sofia-1.0-binding.xsd"/>
+	<!--<include schemaLocation="sofia-1.0-binding.xsd"/>-->
+        <include schemaLocation="sofia-sca-1.1-binding-jms.xsd"/>
 
 </schema>
