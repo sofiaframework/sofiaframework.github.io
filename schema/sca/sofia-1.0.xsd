@@ -5,8 +5,8 @@
 	<import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://docs.oasis-open.org/opencsa/sca-assembly/sca-1.1-cd06.xsd"/>
 
 	<include schemaLocation="sofia-1.0-binding-rpc.xsd"/>
-    <include schemaLocation="sofia-sca-1.1-binding-jms.xsd"/>
+    <!--<include schemaLocation="sofia-sca-1.1-binding-jms.xsd"/>
     <include schemaLocation="sofia-sca-1.1-binding-rest.xsd"/>
-    <include schemaLocation="sofia-sca-1.1-binding-rest1.xsd"/>
+    <include schemaLocation="sofia-sca-1.1-binding-rest1.xsd"/>-->
 
 </schema>
