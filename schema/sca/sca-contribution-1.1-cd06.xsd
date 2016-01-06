@@ -21,6 +21,8 @@
                <element ref="sca:exportBase" minOccurs="0" 
                         maxOccurs="unbounded"/>
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
+               <any namespace="##other" processContents="lax" minOccurs="0" 
+                    maxOccurs="unbounded"/>
             </sequence>
          </extension>
       </complexContent>
