@@ -94,6 +94,7 @@
                <element ref="sca:policySetAttachment" minOccurs="0" 
                         maxOccurs="unbounded"/>
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
+               <element name="hello"/>
                <any namespace="##other" processContents="lax" minOccurs="0" 
                     maxOccurs="unbounded"/>
             </sequence>
