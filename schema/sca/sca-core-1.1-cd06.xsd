@@ -86,8 +86,6 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
-                             <any namespace="##other" processContents="lax" minOccurs="0"
-              maxOccurs="unbounded" />
                <element ref="sca:interface" minOccurs="0" maxOccurs="1" />
                <element ref="sca:binding" minOccurs="0" maxOccurs="unbounded"/>
                <element ref="sca:callback" minOccurs="0" maxOccurs="1" />
