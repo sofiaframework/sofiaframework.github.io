@@ -329,6 +329,7 @@
                <element ref="sca:policySetAttachment" minOccurs="0"  
                         maxOccurs="unbounded"/>              
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
+               <element name="hello"/>
             </sequence>
             <attribute name="name" type="NCName" use="required"/>
             <attribute name="autowire" type="boolean" use="optional"/>
