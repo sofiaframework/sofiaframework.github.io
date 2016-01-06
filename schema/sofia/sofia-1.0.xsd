@@ -2,7 +2,7 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
         targetNamespace="http://www.sofiaframework.org/schema/sca">
 
-	<import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="../sca/sca-1.1-cd06.xsd"/>
+	<import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://www.sofiaframework.org/schema/sca/sca-1.1-cd06.xsd"/>
 
 	<include schemaLocation="sofia-1.0-binding-rpc.xsd"/>
     <include schemaLocation="sofia-sca-1.1-binding-jms.xsd"/>

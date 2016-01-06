@@ -5,7 +5,7 @@
         targetNamespace="http://www.sofiaframework.org/schema/sca"
         elementFormDefault="qualified">
 
-    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="../sca/sca-1.1-cd06.xsd"/>
+    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://www.sofiaframework.org/schema/sca/sca-1.1-cd06.xsd"/>
 
 	<element name="binding.rpc" type="sofia:BaseRPCBinding" substitutionGroup="sca:binding"/>
 
