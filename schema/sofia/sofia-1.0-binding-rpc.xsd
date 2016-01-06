@@ -30,6 +30,38 @@
 					</element>
 				</sequence>
 				<attribute name="uri" type="string" use="required"/>
+				<attribute name="maxPoolSize" type="integer"/>
+				<attribute name="configStyle" type="string"/>
+				<!-- Service -->
+				<attribute name="serviceName" type="string"/>
+				<attribute name="serviceDesc" type="string"/>
+				<attribute name="serviceDubboVersion" type="string"/>
+				<attribute name="corePoolSize" type="integer"/>
+				<attribute name="serializeType" type="string"/>
+				<attribute name="preferSerializeType" type="string"/>
+				<attribute name="methodToInjectConsumerIp" type="string"/>
+				<attribute name="supportAsynCall" type="boolean"/>
+				<attribute name="delayedPublish" type="boolean"/>
+				<attribute name="writeMode">
+					<simpleType>
+						<restriction base="string">
+							<enumeration value="unit"/>
+							<enumeration value="center"/>
+						</restriction>
+					</simpleType>
+				</attribute>
+				<attribute name="route" type="integer"/>
+				<attribute name="routeCheck" type="boolean"/>
+				<!-- reference -->
+				<attribute name="dubboVersion" type="string"/>
+				<attribute name="asyncallMethods" type="string"/>
+				<attribute name="proxyStyle" type="string"/>
+				<attribute name="connectionNum" type="integer"/>
+				<attribute name="generic" type="string"/>
+				<attribute name="retries" type="integer"/>
+				<attribute name="filter" type="string"/>
+				<attribute name="secureKey" type="string"/>
+				<attribute name="maxWaitTimeForCsAddress" type="integer"/>
 				<anyAttribute namespace="##any" processContents="lax" />
 			</extension>
 		</complexContent>
