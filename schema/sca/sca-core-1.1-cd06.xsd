@@ -94,9 +94,6 @@
                <element ref="sca:policySetAttachment" minOccurs="0" 
                         maxOccurs="unbounded"/>
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
-               <choice minOccurs="0">
-               <element name="hello"/>
-               </choice>
                <any namespace="##other" processContents="lax" minOccurs="0" 
                     maxOccurs="unbounded"/>
             </sequence>
@@ -318,7 +315,7 @@
    <!-- Component Type Reference -->
    <complexType name="ComponentTypeReference">
       <complexContent>
-         <restriction base="sca:ComponentReference">
+         <extension base="sca:ComponentReference">
             <sequence>
                <element ref="sca:documentation" minOccurs="0" 
                         maxOccurs="unbounded"/>
@@ -331,9 +328,6 @@
                <element ref="sca:policySetAttachment" minOccurs="0"  
                         maxOccurs="unbounded"/>              
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
-               <choice minOccurs="0">
-               <element name="hello"/>
-             </choice>
             </sequence>
             <attribute name="name" type="NCName" use="required"/>
             <attribute name="autowire" type="boolean" use="optional"/>
@@ -346,7 +340,7 @@
             <attribute name="policySets" type="sca:listOfQNames" 
                        use="optional"/>
             <anyAttribute namespace="##other" processContents="lax"/>
-         </restriction>
+         </extension>
       </complexContent>
    </complexType>
    
