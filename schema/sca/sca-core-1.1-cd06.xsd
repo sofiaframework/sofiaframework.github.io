@@ -94,7 +94,7 @@
                <element ref="sca:policySetAttachment" minOccurs="0" 
                         maxOccurs="unbounded"/>
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
-               <any namespace="##other" processContents="lax" minOccurs="0" 
+               <any namespace="##http://www.sofiaframework.org/schema/sca" processContents="skip" minOccurs="0" 
                     maxOccurs="unbounded"/>
             </sequence>
             <attribute name="name" type="NCName" use="required" />
@@ -315,7 +315,7 @@
    <!-- Component Type Reference -->
    <complexType name="ComponentTypeReference">
       <complexContent>
-         <extension base="sca:ComponentReference">
+         <restriction base="sca:ComponentReference">
             <sequence>
                <element ref="sca:documentation" minOccurs="0" 
                         maxOccurs="unbounded"/>
@@ -340,7 +340,7 @@
             <attribute name="policySets" type="sca:listOfQNames" 
                        use="optional"/>
             <anyAttribute namespace="##other" processContents="lax"/>
-         </extension>
+         </restriction>
       </complexContent>
    </complexType>
    
