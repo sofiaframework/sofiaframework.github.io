@@ -33,6 +33,7 @@
 				<attribute name="group" type="string"/>
 				<attribute name="maxPoolSize" type="integer"/>
 				<attribute name="configStyle" type="string"/>
+				<attribute name="configserverCenter" type="string"/>
 				<!-- Service -->
 				<attribute name="serviceName" type="string"/>
 				<attribute name="serviceDesc" type="string"/>
