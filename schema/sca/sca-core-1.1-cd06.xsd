@@ -94,7 +94,9 @@
                <element ref="sca:policySetAttachment" minOccurs="0" 
                         maxOccurs="unbounded"/>
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
+               <choice minOccurs="0">
                <element name="hello"/>
+               </choice>
                <any namespace="##other" processContents="lax" minOccurs="0" 
                     maxOccurs="unbounded"/>
             </sequence>
@@ -329,7 +331,9 @@
                <element ref="sca:policySetAttachment" minOccurs="0"  
                         maxOccurs="unbounded"/>              
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
+               <choice minOccurs="0">
                <element name="hello"/>
+             </choice>
             </sequence>
             <attribute name="name" type="NCName" use="required"/>
             <attribute name="autowire" type="boolean" use="optional"/>
