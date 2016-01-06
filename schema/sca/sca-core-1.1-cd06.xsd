@@ -87,18 +87,18 @@
          <extension base="sca:CommonExtensionBase">
             <sequence>
                <element ref="sca:interface" minOccurs="0" maxOccurs="1" />
+               <choice>
                <element ref="sca:binding" minOccurs="0" 
                         maxOccurs="unbounded" />
+               <any namespace="##other" processContents="lax" minOccurs="0" 
+              maxOccurs="unbounded"/>
+               </choice>
                <element ref="sca:callback" minOccurs="0" maxOccurs="1" />
                <element ref="sca:requires" minOccurs="0" 
                         maxOccurs="unbounded"/>
                <element ref="sca:policySetAttachment" minOccurs="0" 
                         maxOccurs="unbounded"/>
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
-            </sequence>
-            <sequence>
-                <any namespace="##other" processContents="lax" minOccurs="0" 
-              maxOccurs="unbounded"/>
             </sequence>
             <attribute name="name" type="NCName" use="required" />
             <attribute name="requires" type="sca:listOfQNames" 
