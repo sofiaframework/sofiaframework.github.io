@@ -319,7 +319,7 @@
                         maxOccurs="unbounded"/>
                <element ref="sca:interface" minOccurs="0"/>
                <element ref="sca:binding" minOccurs="0" 
-                        maxOccurs="unbounded"/>
+                        maxOccurs="1"/>
                <element ref="sca:callback" minOccurs="0"/>
                <element ref="sca:requires" minOccurs="0" 
                         maxOccurs="unbounded"/>
