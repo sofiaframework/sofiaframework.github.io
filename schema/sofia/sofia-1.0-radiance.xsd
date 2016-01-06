@@ -1,0 +1,81 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:sofia="http://www.sofiaframework.org/schema/sca"
+        xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+        targetNamespace="http://www.sofiaframework.org/schema/sca"
+        elementFormDefault="qualified">
+
+	<import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://www.sofiaframework.org/schema/sca/sca-1.1-cd06.xsd"/>
+
+	<element name="implementation.radiance" type="sofia:RadianceImplementation"
+	         substitutionGroup="sca:implementation"/>
+	<complexType name="RadianceImplementation">
+		<complexContent>
+			<extension base="sca:Implementation">
+				<sequence>
+					<choice>
+						<element name="radiance.plugins" type="sofia:RadiancePlugins" minOccurs="0" maxOccurs="1"/>
+						<element name="radiance.dependencies" type="sofia:RadianceDependencies" minOccurs="0" maxOccurs="1"/>
+						<element name="radiance.invokers" type="sofia:RadianceInvokers" minOccurs="0" maxOccurs="1"/>
+					</choice>
+				</sequence>
+				<attribute name="type">
+					<simpleType>
+						<restriction base="string">
+							<enumeration value="module"/>
+							<enumeration value="host"/>
+						</restriction>
+					</simpleType>
+				</attribute>
+				<attribute name="location" type="string"/>
+				<attribute name="version" type="string"/>
+				<attribute name="domain" type="string"/>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="RadiancePlugins">
+		<sequence>
+			<choice minOccurs="0" maxOccurs="unbounded">
+				<element name="radiance.plugin" type="sofia:RadiancePlugin" />
+				<element name="radiance.plugin.reference" type="sofia:RadiancePluginReference"/>
+			</choice>
+		</sequence>
+	</complexType>
+
+	<complexType name="RadiancePlugin">
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="class" type="string" use="required"/>
+	</complexType>
+
+	<complexType name="RadiancePluginReference">
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="reference" type="string" use="required"/>
+		<attribute name="interface" type="string" use="required"/>
+	</complexType>
+
+	<complexType name="RadianceDependencies">
+		<sequence>
+			<element name="radiance.dependency" type="sofia:RadianceDependency" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="RadianceDependency">
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="version" type="string" use="required"/>
+	</complexType>
+
+	<complexType name="RadianceInvokers">
+		<sequence>
+			<element name="radiance.invoker" type="sofia:RadianceInvoker" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="RadianceInvoker">
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="lazy" type="boolean"/>
+		<attribute name="scriptType" type="string"/>
+		<attribute name="templateType" type="string"/>
+		<attribute name="layoutType" type="string"/>
+	</complexType>
+
+</schema>
