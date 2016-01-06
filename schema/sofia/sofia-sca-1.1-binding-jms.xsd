@@ -23,9 +23,9 @@
     xmlns:sofia="http://www.sofiaframework.org/schema/sca"
     elementFormDefault="qualified">
 
-   <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://docs.oasis-open.org/opencsa/sca-assembly/sca-binding-jms-1.1-csd05.xsd"/>
+   <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="../sca/sca-binding-jms-1.1-csd05.xsd"/>
    
-   <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912"  schemaLocation="sca-1.1-cd06.xsd"/>
+   <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912"  schemaLocation="../sca/sca-1.1-cd06.xsd"/>
         
    <!--  wire formats -->
    <!-- -->
