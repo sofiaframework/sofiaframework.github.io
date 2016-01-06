@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.springframework.org/schema/sofia"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:beans="http://www.springframework.org/schema/beans"
+            targetNamespace="http://www.springframework.org/schema/sofia">
+
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+	<xsd:import namespace="http://www.springframework.org/schema/beans"/>
+	<xsd:import namespace="http://www.springframework.org/schema/tool"/>
+
+	<xsd:annotation>
+		<xsd:documentation><![CDATA[
+	Defines the configuration elements for Sofia SCA support.
+		]]></xsd:documentation>
+	</xsd:annotation>
+
+
+	<xsd:element name="import">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ SCA Component Import ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="component" type="xsd:string" use="required">
+				<xsd:annotation>
+					<xsd:documentation><![CDATA[ The SCA component name. ]]></xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="type" type="xsd:string" use="optional">
+				<xsd:annotation>
+					<xsd:documentation>
+						<![CDATA[ The import type ("reference" or "service", default "all"). ]]></xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="reference">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ SCA Reference ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="beans:identifiedType">
+					<xsd:attribute name="target" type="xsd:string" use="required">
+						<xsd:annotation>
+							<xsd:documentation><![CDATA[ The SCA service target. ]]></xsd:documentation>
+						</xsd:annotation>
+					</xsd:attribute>
+					<xsd:attribute name="type" type="xsd:string" use="required">
+						<xsd:annotation>
+							<xsd:documentation><![CDATA[ The SCA service interface. ]]></xsd:documentation>
+						</xsd:annotation>
+					</xsd:attribute>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+
+    <xsd:element name="resource">
+        <xsd:annotation>
+            <xsd:documentation><![CDATA[ Sofia Resource ]]></xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="beans:identifiedType">
+                </xsd:extension>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>
