@@ -89,7 +89,7 @@
                <element ref="sca:interface" minOccurs="0" maxOccurs="1" />
                <choice>
                <element ref="sca:binding"  />
-               <any namespace="##other" processContents="lax"/>
+               <any namespace="##other" processContents="lax" minOccurs="0"/>
                </choice>
                <element ref="sca:callback" minOccurs="0" maxOccurs="1" />
                <element ref="sca:requires" minOccurs="0" 
