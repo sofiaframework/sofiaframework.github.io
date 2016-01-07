@@ -190,8 +190,8 @@
    </complexType>
 
    <!-- Binding -->
-   <element name="binding" type="sca:Binding" abstract="true"/>
-   <complexType name="Binding" abstract="true">
+   <element name="binding" type="sca:Binding"/>
+   <complexType name="Binding">
             
    </complexType>
 
