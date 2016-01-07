@@ -90,6 +90,7 @@
                         maxOccurs="unbounded"/>
                <choice minOccurs="0" maxOccurs="unbounded">
                   <element ref="sca:requires"/>
+                  <element ref="sca:binding" minOccurs="0" maxOccurs="1"/>
                   <element ref="sca:policySetAttachment"/>
                   <element name="service" type="sca:Service"/>
                   <element name="property" type="sca:Property"/>
@@ -324,6 +325,7 @@
                         maxOccurs="unbounded"/>
                <choice minOccurs="0" maxOccurs="unbounded">
                   <element ref="sca:requires"/>
+                  <element ref="sca:binding" minOccurs="0" maxOccurs="1"/>
                   <element ref="sca:policySetAttachment"/>
                   <element name="service" type="sca:Service"/>
                   <element name="property" type="sca:Property"/>
