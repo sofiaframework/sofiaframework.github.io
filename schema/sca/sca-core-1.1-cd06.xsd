@@ -195,7 +195,7 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
-               <element ref="sca:wireFormat" minOccurs="1" maxOccurs="1" />
+               <element ref="sca:wireFormat" minOccurs="0" maxOccurs="1" />
                <element ref="sca:operationSelector" minOccurs="0" 
                         maxOccurs="1" />
                <element ref="sca:requires" minOccurs="0" 
@@ -325,7 +325,6 @@
                         maxOccurs="unbounded"/>
                <choice minOccurs="0" maxOccurs="unbounded">
                   <element ref="sca:requires"/>
-                  <element ref="sca:binding"/>
                   <element ref="sca:policySetAttachment"/>
                   <element name="service" type="sca:Service"/>
                   <element name="property" type="sca:Property"/>
