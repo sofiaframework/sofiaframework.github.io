@@ -96,8 +96,6 @@
                   <element name="component" type="sca:Component"/>
                   <element name="reference" type="sca:Reference"/>
                   <element name="wire" type="sca:Wire"/>
-                  <element ref="sca:binding" minOccurs="0" 
-                        maxOccurs="unbounded"/>
                </choice>
                <any namespace="##other" processContents="lax" minOccurs="0"
               maxOccurs="unbounded"/>
