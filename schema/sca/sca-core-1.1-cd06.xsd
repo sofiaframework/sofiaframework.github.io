@@ -89,10 +89,10 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
-               <element ref="sca:include" minOccurs="0" 
-                        maxOccurs="unbounded"/>
-               <!--<element ref="sca:binding" minOccurs="0" 
+               <!--<element ref="sca:include" minOccurs="0" 
                         maxOccurs="unbounded"/>-->
+               <element ref="sca:binding" minOccurs="0" 
+                        maxOccurs="unbounded"/>
                <choice minOccurs="0" maxOccurs="unbounded">
                   <element ref="sca:requires"/>
                   <element ref="sca:policySetAttachment"/>
