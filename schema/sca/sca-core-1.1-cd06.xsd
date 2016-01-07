@@ -308,6 +308,7 @@
    
    <!-- Component Type Reference -->
    <complexType name="ComponentTypeReference">
+      <!--
       <complexContent>
          <restriction base="sca:ComponentReference">
             <sequence>
@@ -336,6 +337,7 @@
             <anyAttribute namespace="##other" processContents="lax"/>
          </restriction>
       </complexContent>
+    -->
    </complexType>
    
 
