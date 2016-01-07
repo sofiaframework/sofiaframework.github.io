@@ -86,14 +86,17 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
-               <element ref="sca:interface" minOccurs="0" maxOccurs="1" />
-               <element ref="sca:binding" minOccurs="0" maxOccurs="1"/>
-               <element ref="sca:callback" minOccurs="0" maxOccurs="1" />
-               <element ref="sca:requires" minOccurs="0" 
+               <element ref="sca:include" minOccurs="0" 
                         maxOccurs="unbounded"/>
-               <element ref="sca:policySetAttachment" minOccurs="0" 
-                        maxOccurs="unbounded"/>
-               <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
+               <choice minOccurs="0" maxOccurs="unbounded">
+                  <element ref="sca:requires"/>
+                  <element ref="sca:policySetAttachment"/>
+                  <element name="service" type="sca:Service"/>
+                  <element name="property" type="sca:Property"/>
+                  <element name="component" type="sca:Component"/>
+                  <element name="reference" type="sca:Reference"/>
+                  <element name="wire" type="sca:Wire"/>
+               </choice>
                <any namespace="##other" processContents="skip" minOccurs="0" 
                     maxOccurs="unbounded"/>
             </sequence>
@@ -317,17 +320,17 @@
       <complexContent>
          <restriction base="sca:ComponentReference">
             <sequence>
-               <element ref="sca:documentation" minOccurs="0" 
+               <element ref="sca:include" minOccurs="0" 
                         maxOccurs="unbounded"/>
-               <element ref="sca:interface" minOccurs="0"/>
-               <element ref="sca:binding" minOccurs="0" 
-                        maxOccurs="1"/>
-               <element ref="sca:callback" minOccurs="0"/>
-               <element ref="sca:requires" minOccurs="0" 
-                        maxOccurs="unbounded"/>
-               <element ref="sca:policySetAttachment" minOccurs="0"  
-                        maxOccurs="unbounded"/>              
-               <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
+               <choice minOccurs="0" maxOccurs="unbounded">
+                  <element ref="sca:requires"/>
+                  <element ref="sca:policySetAttachment"/>
+                  <element name="service" type="sca:Service"/>
+                  <element name="property" type="sca:Property"/>
+                  <element name="component" type="sca:Component"/>
+                  <element name="reference" type="sca:Reference"/>
+                  <element name="wire" type="sca:Wire"/>
+               </choice>
             </sequence>
             <attribute name="name" type="NCName" use="required"/>
             <attribute name="autowire" type="boolean" use="optional"/>
