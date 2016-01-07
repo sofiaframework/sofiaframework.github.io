@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 1999-2101 Alibaba.com. All rights reserved.
+  ~ This software is the confidential and proprietary information of Alibaba.com ("Confidential Information").
+  ~ You shall not disclose such Confidential Information and shall use it only in accordance with the terms of the license agreement you entered into with Alibaba.com.
+  -->
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://www.sofiaframework.org/schema/sca">
+        targetNamespace="http://www.sofiaframework.org/schema/sca"
+        elementFormDefault="qualified">
 
-	<import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://www.sofiaframework.org/schema/sca/sca-1.1-cd06.xsd"/>
+    <!-- sofia-sca -->
+    <include schemaLocation="http://www.sofiaframework.org/schema/sofia/sofia-sca-1.1.xsd"/>
 
-    <include schemaLocation="sofia-sca-1.1-core.xsd"/>
-    <include schemaLocation="sofia-sca-1.1-binding-jms.xsd"/>
-    <include schemaLocation="sofia-sca-1.1-binding-rest.xsd"/>
-    <include schemaLocation="sofia-sca-1.1-contribution-resource.xsd"/>
-
-    <include schemaLocation="sofia-1.0-binding-rpc.xsd"/>
+    <include schemaLocation="sofia-1.0-binding.xsd"/>
     <include schemaLocation="sofia-1.0-radiance.xsd"/>
     <include schemaLocation="sofia-1.0-webx.xsd"/>
+
+
 
 </schema>
