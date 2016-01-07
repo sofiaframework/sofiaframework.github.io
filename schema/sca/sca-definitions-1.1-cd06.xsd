@@ -17,7 +17,7 @@
             <choice minOccurs="0" maxOccurs="unbounded">
                <element ref="sca:intent"/>
                <element ref="sca:policySet"/>
-               <!--<element ref="sca:bindingType"/>-->
+               <element ref="sca:bindingType"/>
                <element ref="sca:implementationType"/>
                <element ref="sca:externalAttachment"/>
                <any namespace="##other" processContents="lax" 

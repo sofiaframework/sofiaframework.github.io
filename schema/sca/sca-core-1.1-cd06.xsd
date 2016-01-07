@@ -195,13 +195,7 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
-               <element ref="sca:wireFormat" minOccurs="0" maxOccurs="1" />
-               <element ref="sca:operationSelector" minOccurs="0" 
-                        maxOccurs="1" />
-               <element ref="sca:requires" minOccurs="0" 
-                        maxOccurs="unbounded"/>
-               <element ref="sca:policySetAttachment" minOccurs="0" 
-                        maxOccurs="unbounded"/>
+               <element ref="sca:wireFormat"/>
             </sequence>
             <attribute name="uri" type="anyURI" use="optional"/>
             <attribute name="name" type="NCName" use="optional"/>
@@ -215,7 +209,6 @@
 
 
    <!-- Binding Type -->
-      <!--
    <element name="bindingType" type="sca:BindingType"/>
    <complexType name="BindingType">
       <complexContent>
@@ -232,7 +225,6 @@
          </extension>
       </complexContent>
    </complexType>
- -->
    
    <!-- WireFormat Type -->
    <element name="wireFormat" type="sca:WireFormatType" abstract="true"/>
