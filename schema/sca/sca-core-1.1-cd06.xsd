@@ -192,10 +192,7 @@
    <!-- Binding -->
    <element name="binding" type="sca:Binding" abstract="true"/>
    <complexType name="Binding" abstract="true">
-      <complexContent>
-         <extension base="sca:CommonExtensionBase">
-         </extension>
-      </complexContent>
+      <anyAttribute namespace="##other" processContents="lax"/>
    </complexType>
 
 
