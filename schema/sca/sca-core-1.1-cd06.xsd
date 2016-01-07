@@ -192,10 +192,7 @@
    <!-- Binding -->
    <element name="binding" type="sca:Binding" abstract="true"/>
    <complexType name="Binding" abstract="true">
-            <sequence>
-         <any namespace="##other" processContents="lax" minOccurs="0"
-              maxOccurs="unbounded"/>
-      </sequence>
+            
    </complexType>
 
 
