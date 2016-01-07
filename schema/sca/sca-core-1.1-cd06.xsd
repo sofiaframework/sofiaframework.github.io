@@ -89,10 +89,10 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
-               <element ref="sca:include" minOccurs="0" 
-                        maxOccurs="unbounded"/>
-               <!--<element ref="sca:binding" minOccurs="0" 
+               <!--<element ref="sca:include" minOccurs="0" 
                         maxOccurs="unbounded"/>-->
+               <element ref="sca:binding" minOccurs="0" 
+                        maxOccurs="unbounded"/>
                <choice minOccurs="0" maxOccurs="unbounded">
                   <element ref="sca:requires"/>
                   <element ref="sca:policySetAttachment"/>
@@ -203,7 +203,9 @@
    </complexType>
 
 
+   
    <!-- Binding Type -->
+   <!--
    <element name="bindingType" type="sca:BindingType"/>
    <complexType name="BindingType">
       <complexContent>
@@ -220,6 +222,7 @@
          </extension>
       </complexContent>
    </complexType>
+ -->
    
    <!-- WireFormat Type -->
    <element name="wireFormat" type="sca:WireFormatType" abstract="true"/>
@@ -240,7 +243,7 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <choice minOccurs="0" maxOccurs="unbounded">
-               <element ref="sca:binding"/>
+               <!--<element ref="sca:binding"/>-->
                <element ref="sca:requires"/>
                <element ref="sca:policySetAttachment"/>
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
