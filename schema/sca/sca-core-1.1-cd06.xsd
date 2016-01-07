@@ -98,7 +98,7 @@
                   <element name="wire" type="sca:Wire"/>
                   <element ref="sca:binding"/>
                </choice>
-               <any namespace="##any" processContents="lax" minOccurs="0"
+               <any namespace="##other" processContents="lax" minOccurs="0"
               maxOccurs="unbounded"/>
             </sequence>
             <attribute name="name" type="NCName" use="required" />
@@ -192,7 +192,10 @@
    <!-- Binding -->
    <element name="binding" type="sca:Binding" abstract="true"/>
    <complexType name="Binding" abstract="true">
-      
+            <sequence>
+         <any namespace="##other" processContents="lax" minOccurs="0"
+              maxOccurs="unbounded"/>
+      </sequence>
    </complexType>
 
 
