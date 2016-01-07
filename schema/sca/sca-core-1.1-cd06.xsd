@@ -213,7 +213,9 @@
       </complexContent>
    </complexType>
 
+
    <!-- Binding Type -->
+      <!--
    <element name="bindingType" type="sca:BindingType"/>
    <complexType name="BindingType">
       <complexContent>
@@ -230,6 +232,7 @@
          </extension>
       </complexContent>
    </complexType>
+ -->
    
    <!-- WireFormat Type -->
    <element name="wireFormat" type="sca:WireFormatType" abstract="true"/>
