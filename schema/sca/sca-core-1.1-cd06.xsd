@@ -98,8 +98,8 @@
                   <element name="wire" type="sca:Wire"/>
                   <element ref="sca:binding"/>
                </choice>
-               <!--<any namespace="##other" processContents="skip" minOccurs="0" 
-                    maxOccurs="unbounded"/>-->
+               <any namespace="##other" processContents="skip" minOccurs="0" 
+                    maxOccurs="unbounded"/>
             </sequence>
             <attribute name="name" type="NCName" use="required" />
             <attribute name="requires" type="sca:listOfQNames" 
