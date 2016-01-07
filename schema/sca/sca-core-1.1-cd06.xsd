@@ -194,12 +194,6 @@
    <complexType name="Binding" abstract="true">
       <complexContent>
          <extension base="sca:CommonExtensionBase">
-            <attribute name="uri" type="anyURI" use="optional"/>
-            <attribute name="name" type="NCName" use="optional"/>
-            <attribute name="requires" type="sca:listOfQNames" 
-                       use="optional"/>
-            <attribute name="policySets" type="sca:listOfQNames" 
-                       use="optional"/>
          </extension>
       </complexContent>
    </complexType>
