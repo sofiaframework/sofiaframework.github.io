@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright(C) OASIS(R) 2005,2010. All Rights Reserved. 
+     OASIS trademark, IPR and other policies apply.  -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.sofiaframework.org/schema/sca"
+        xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+        xmlns:sofia="http://www.sofiaframework.org/schema/sca"
+        elementFormDefault="qualified">
+
+   <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://www.sofiaframework.org/schema/sca/sca-1.1-cd06.xsd"/>
+
+   <!-- Binding -->
+   <element name="binding" type="sofia:Binding" abstract="true"/>
+   <complexType name="Binding" abstract="true">
+      <complexContent>
+         <extension base="sca:CommonExtensionBase">
+            <sequence>
+               <element ref="sca:wireFormat" minOccurs="0" maxOccurs="1" />
+               <element ref="sca:operationSelector" minOccurs="0" 
+                        maxOccurs="1" />
+               <element ref="sca:requires" minOccurs="0" 
+                        maxOccurs="unbounded"/>
+               <element ref="sca:policySetAttachment" minOccurs="0" 
+                        maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="uri" type="anyURI" use="optional"/>
+            <attribute name="name" type="NCName" use="optional"/>
+            <attribute name="requires" type="sca:listOfQNames" 
+                       use="optional"/>
+            <attribute name="policySets" type="sca:listOfQNames" 
+                       use="optional"/>
+         </extension>
+      </complexContent>
+   </complexType>
+
+   <!-- Implementation -->
+   <element name="implementation" type="sofia:Implementation" abstract="true"/>
+   <complexType name="Implementation" abstract="true">
+      <complexContent>
+         <extension base="sca:CommonExtensionBase">
+	        <choice minOccurs="0" maxOccurs="unbounded">
+	           <element ref="sca:requires"/>
+	           <element ref="sca:policySetAttachment"/>
+	        </choice>     
+            <attribute name="requires" type="sca:listOfQNames" 
+                       use="optional"/>
+            <attribute name="policySets" type="sca:listOfQNames" 
+                       use="optional"/>
+         </extension>
+      </complexContent>
+   </complexType>
+
+</schema>

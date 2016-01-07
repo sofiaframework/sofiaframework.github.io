@@ -6,20 +6,17 @@
    targetNamespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" 
    elementFormDefault="qualified">
 
-   <include schemaLocation="sca-policy-1.1-cd04.xsd"/>	
+   <include schemaLocation="sca-policy-1.1-cd04.xsd"/>  
    <import namespace="http://www.w3.org/XML/1998/namespace" 
            schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 
    <!-- Common extension base for SCA definitions -->
    <complexType name="CommonExtensionBase">
-      <!--
       <sequence>
          <element ref="sca:documentation" minOccurs="0" 
                   maxOccurs="unbounded"/>
       </sequence>
       <anyAttribute namespace="##other" processContents="lax"/>
-
-    -->
    </complexType>
    
    <element name="documentation" type="sca:Documentation"/>
@@ -89,20 +86,17 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
-               <element ref="sca:include" minOccurs="0" 
+               <element ref="sca:interface" minOccurs="0" maxOccurs="1" />
+               <element ref="sca:binding" minOccurs="0" 
+                        maxOccurs="unbounded" />
+               <element ref="sca:callback" minOccurs="0" maxOccurs="1" />
+               <element ref="sca:requires" minOccurs="0" 
                         maxOccurs="unbounded"/>
-               <element ref="sca:binding"/>
-               <choice minOccurs="0" maxOccurs="unbounded">
-                  <element ref="sca:requires"/>
-                  <element ref="sca:policySetAttachment"/>
-                  <element name="service" type="sca:Service"/>
-                  <element name="property" type="sca:Property"/>
-                  <element name="component" type="sca:Component"/>
-                  <element name="reference" type="sca:Reference"/>
-                  <element name="wire" type="sca:Wire"/>
-               </choice>
+               <element ref="sca:policySetAttachment" minOccurs="0" 
+                        maxOccurs="unbounded"/>
+               <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
                <any namespace="##other" processContents="lax" minOccurs="0"
-              maxOccurs="unbounded"/>
+                    maxOccurs="unbounded"/>
             </sequence>
             <attribute name="name" type="NCName" use="required" />
             <attribute name="requires" type="sca:listOfQNames" 
@@ -132,9 +126,9 @@
                <element ref="sca:policySetAttachment"/>
             </choice>
             <attribute name="remotable" type="boolean" use="optional"/>
-	        <attribute name="requires" type="sca:listOfQNames" 
+          <attribute name="requires" type="sca:listOfQNames" 
                use="optional"/>
-	        <attribute name="policySets" type="sca:listOfQNames" 
+          <attribute name="policySets" type="sca:listOfQNames" 
                use="optional"/>
          </extension>
       </complexContent>
@@ -192,17 +186,30 @@
       </complexContent>
    </complexType>
 
-   <element name="binding" type="sca:Binding"/>
-   <complexType name="Binding">
+   <!-- Binding -->
+   <element name="binding" type="sca:Binding" abstract="true"/>
+   <complexType name="Binding" abstract="true">
       <complexContent>
          <extension base="sca:CommonExtensionBase">
-            <attribute name="name" type="QName"/>
+            <sequence>
+               <element ref="sca:wireFormat" minOccurs="0" maxOccurs="1" />
+               <element ref="sca:operationSelector" minOccurs="0" 
+                        maxOccurs="1" />
+               <element ref="sca:requires" minOccurs="0" 
+                        maxOccurs="unbounded"/>
+               <element ref="sca:policySetAttachment" minOccurs="0" 
+                        maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="uri" type="anyURI" use="optional"/>
+            <attribute name="name" type="NCName" use="optional"/>
+            <attribute name="requires" type="sca:listOfQNames" 
+                       use="optional"/>
+            <attribute name="policySets" type="sca:listOfQNames" 
+                       use="optional"/>
          </extension>
       </complexContent>
    </complexType>
 
-
-   
    <!-- Binding Type -->
    <element name="bindingType" type="sca:BindingType"/>
    <complexType name="BindingType">
@@ -240,7 +247,7 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <choice minOccurs="0" maxOccurs="unbounded">
-               <!--<element ref="sca:binding"/>-->
+               <element ref="sca:binding"/>
                <element ref="sca:requires"/>
                <element ref="sca:policySetAttachment"/>
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
@@ -268,7 +275,7 @@
                   <element ref="sca:policySetAttachment"/>
                </choice>
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
-               <any namespace="##other" processContents="lax" minOccurs="0" 
+               <any namespace="##other" processContents="lax" minOccurs="0"
                     maxOccurs="unbounded"/>
             </sequence>
             <attribute name="name" type="NCName" use="required"/>
@@ -308,21 +315,20 @@
    
    <!-- Component Type Reference -->
    <complexType name="ComponentTypeReference">
-      <!--
       <complexContent>
          <restriction base="sca:ComponentReference">
             <sequence>
-               <element ref="sca:include" minOccurs="0" 
+               <element ref="sca:documentation" minOccurs="0" 
                         maxOccurs="unbounded"/>
-               <choice minOccurs="0" maxOccurs="unbounded">
-                  <element ref="sca:requires"/>
-                  <element ref="sca:policySetAttachment"/>
-                  <element name="service" type="sca:Service"/>
-                  <element name="property" type="sca:Property"/>
-                  <element name="component" type="sca:Component"/>
-                  <element name="reference" type="sca:Reference"/>
-                  <element name="wire" type="sca:Wire"/>
-               </choice>
+               <element ref="sca:interface" minOccurs="0"/>
+               <element ref="sca:binding" minOccurs="0" 
+                        maxOccurs="unbounded"/>
+               <element ref="sca:callback" minOccurs="0"/>
+               <element ref="sca:requires" minOccurs="0" 
+                        maxOccurs="unbounded"/>
+               <element ref="sca:policySetAttachment" minOccurs="0"  
+                        maxOccurs="unbounded"/>              
+               <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
             </sequence>
             <attribute name="name" type="NCName" use="required"/>
             <attribute name="autowire" type="boolean" use="optional"/>
@@ -337,7 +343,6 @@
             <anyAttribute namespace="##other" processContents="lax"/>
          </restriction>
       </complexContent>
-    -->
    </complexType>
    
 
@@ -346,10 +351,10 @@
    <complexType name="Implementation" abstract="true">
       <complexContent>
          <extension base="sca:CommonExtensionBase">
-	        <choice minOccurs="0" maxOccurs="unbounded">
-	           <element ref="sca:requires"/>
-	           <element ref="sca:policySetAttachment"/>
-	        </choice>     
+          <choice minOccurs="0" maxOccurs="unbounded">
+             <element ref="sca:requires"/>
+             <element ref="sca:policySetAttachment"/>
+          </choice>     
             <attribute name="requires" type="sca:listOfQNames" 
                        use="optional"/>
             <attribute name="policySets" type="sca:listOfQNames" 
@@ -456,7 +461,7 @@
    <simpleType name="listOfAnyURIs">
       <list itemType="anyURI"/>
    </simpleType>
-	
+  
    <simpleType name="CreateResource">
       <restriction base="string">
          <enumeration value="always" />
