@@ -90,16 +90,16 @@
                         maxOccurs="unbounded"/>
                <choice minOccurs="0" maxOccurs="unbounded">
                   <element ref="sca:requires"/>
-                  <element ref="sca:binding"/>
                   <element ref="sca:policySetAttachment"/>
                   <element name="service" type="sca:Service"/>
                   <element name="property" type="sca:Property"/>
                   <element name="component" type="sca:Component"/>
                   <element name="reference" type="sca:Reference"/>
                   <element name="wire" type="sca:Wire"/>
+                  <element ref="sca:binding"/>
                </choice>
-               <any namespace="##other" processContents="skip" minOccurs="0" 
-                    maxOccurs="unbounded"/>
+               <!--<any namespace="##other" processContents="skip" minOccurs="0" 
+                    maxOccurs="unbounded"/>-->
             </sequence>
             <attribute name="name" type="NCName" use="required" />
             <attribute name="requires" type="sca:listOfQNames" 
