@@ -87,16 +87,16 @@
          <extension base="sca:CommonExtensionBase">
             <sequence>
                <element ref="sca:interface" minOccurs="0" maxOccurs="1" />
-               <element ref="sca:binding" minOccurs="0" 
-                        maxOccurs="unbounded" />
+               <choice minOccurs="0" maxOccurs="unbounded">
+                  <element ref="sca:binding" />
+                  <any namespace="##other" processContents="lax"/>
+               </choice>
                <element ref="sca:callback" minOccurs="0" maxOccurs="1" />
                <element ref="sca:requires" minOccurs="0" 
                         maxOccurs="unbounded"/>
                <element ref="sca:policySetAttachment" minOccurs="0" 
                         maxOccurs="unbounded"/>
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
-               <any namespace="##other" processContents="lax" minOccurs="0"
-                    maxOccurs="unbounded"/>
             </sequence>
             <attribute name="name" type="NCName" use="required" />
             <attribute name="requires" type="sca:listOfQNames" 
@@ -265,8 +265,10 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
-               <element ref="sca:implementation" minOccurs="1" 
-                  maxOccurs="1"/>
+               <choice minOccurs="0" maxOccurs="1">
+                  <element ref="sca:implementation"/>
+                  <any namespace="##other" processContents="lax"/>
+               </choice>
                <choice minOccurs="0" maxOccurs="unbounded">
                   <element name="service" type="sca:ComponentService"/>
                   <element name="reference" type="sca:ComponentReference"/>
@@ -275,8 +277,6 @@
                   <element ref="sca:policySetAttachment"/>
                </choice>
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
-               <any namespace="##other" processContents="lax" minOccurs="0"
-                    maxOccurs="unbounded"/>
             </sequence>
             <attribute name="name" type="NCName" use="required"/>
             <attribute name="autowire" type="boolean" use="optional"/>
