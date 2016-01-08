@@ -51,7 +51,7 @@
          <element name="property" type="sca:BindingProperty" 
                   minOccurs="0" maxOccurs="unbounded"/>
       </sequence>
-      <attribute name="jndiName" type="anyURI"/>
+      <attribute name="jndiName" type="string"/>
       <attribute name="type" use="optional" default="queue">
          <simpleType>
             <restriction base="string">
@@ -68,7 +68,7 @@
       <sequence>          <element name="property" type="sca:BindingProperty" 
                   minOccurs="0" maxOccurs="unbounded"/>
       </sequence>
-      <attribute name="jndiName" type="anyURI"/>
+      <attribute name="jndiName" type="string"/>
       <attribute name="create" type="sca:JMSCreateResource" 
                  use="optional" default="ifNotExist"/>
    </complexType>
@@ -78,7 +78,7 @@
          <element name="property" type="sca:BindingProperty" 
                   minOccurs="0" maxOccurs="unbounded"/>
       </sequence>
-      <attribute name="jndiName" type="anyURI"/>
+      <attribute name="jndiName" type="string"/>
       <attribute name="create" type="sca:JMSCreateResource"
                  use="optional" default="ifNotExist"/>
    </complexType>

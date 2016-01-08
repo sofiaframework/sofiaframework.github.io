@@ -108,9 +108,17 @@
    <element name="operationSelector.jmsdefault" 
             type="sofia:OperationSelectorJMSDefaultType"/>
 
+    <complexType name="operation">
+        <attribute name="name" type="string" use="required" />
+        <attribute name="selectedOperation" type="string" use="required" />
+    </complexType>
+
    <complexType name="OperationSelectorJMSUserPropType">
       <complexContent>
          <extension base="sofia:OperationSelectorType">
+             <sequence>
+                 <element name="operation" type="sofia:operation" minOccurs="0" maxOccurs="unbounded"/>
+             </sequence>
              <attribute name="propertyName" type="string"/>           
          </extension>         
       </complexContent>
@@ -118,5 +126,4 @@
    <element name="operationSelector.jmsUserProp" 
             type="sofia:OperationSelectorJMSUserPropType"/>
 
-  <!-- -->                           
 </schema>
