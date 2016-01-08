@@ -26,66 +26,63 @@
    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://www.sofiaframework.org/schema/sca/sca-binding-jms-1.1-csd05.xsd"/>
    
    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912"  schemaLocation="http://www.sofiaframework.org/schema/sca/sca-1.1-cd06.xsd"/>
+
+    <include schemaLocation="sofia-sca-1.1-core.xsd"/>
         
    <!--  wire formats -->
    <!-- -->
    <complexType name="WireFormatJMSDefaultType">
       <complexContent>
-         <extension base="sca:WireFormatType">
+         <extension base="sofia:WireFormatType">
              <attribute name="sendFormat" default="bytes">
                   <simpleType>
                       <restriction base="string">
                          <enumeration value="text"/>
                          <enumeration value="bytes"/>
                       </restriction>
-                  </simpleType>             
+                  </simpleType>
              </attribute>
          </extension>
       </complexContent>
-   </complexType>    
+   </complexType>
    <element name="wireFormat.jmsDefault"
-            type="sofia:WireFormatJMSDefaultType"
-            substitutionGroup="sca:wireFormat"/>            
+            type="sofia:WireFormatJMSDefaultType"/>
 
   <complexType name="WireFormatJMSTextType">
       <complexContent>
-         <extension base="sca:WireFormatType"/>
+         <extension base="sofia:WireFormatType"/>
       </complexContent>
    </complexType>
    <element name="wireFormat.jmsText" 
-            type="sofia:WireFormatJMSTextType"
-            substitutionGroup="sca:wireFormat"/>
+            type="sofia:WireFormatJMSTextType"/>
                   
    <complexType name="WireFormatJMSTextXMLType">
       <complexContent>
-         <extension base="sca:WireFormatType"/>
+         <extension base="sofia:WireFormatType"/>
       </complexContent>
    </complexType>
    <element name="wireFormat.jmsTextXML" 
-            type="sofia:WireFormatJMSTextXMLType"
-            substitutionGroup="sca:wireFormat"/>
+            type="sofia:WireFormatJMSTextXMLType"/>
       
    <complexType name="WireFormatJMSBytesType">
       <complexContent>
-         <extension base="sca:WireFormatType"/>
+         <extension base="sofia:WireFormatType"/>
       </complexContent>
    </complexType>
    <element name="wireFormat.jmsBytes" 
-            type="sofia:WireFormatJMSBytesType"
-            substitutionGroup="sca:wireFormat"/>
+            type="sofia:WireFormatJMSBytesType"/>
    
    <complexType name="WireFormatJMSBytesXMLType">
       <complexContent>
-         <extension base="sca:WireFormatType"/>
+         <extension base="sofia:WireFormatType"/>
       </complexContent>
    </complexType>
    <element name="wireFormat.jmsBytesXML" 
-            type="sofia:WireFormatJMSBytesXMLType"
-            substitutionGroup="sca:wireFormat"/>
+            type="sofia:WireFormatJMSBytesXMLType"/>
    
    <complexType name="WireFormatJMSObjectType">
       <complexContent>
-         <extension base="sca:WireFormatType">
+         <extension base="sofia:WireFormatType">
              <attribute name="wrapSingle" default="false">
                   <simpleType>
                       <restriction base="string">
@@ -98,31 +95,28 @@
       </complexContent>
    </complexType>       
    <element name="wireFormat.jmsObject" 
-            type="sofia:WireFormatJMSObjectType"
-            substitutionGroup="sca:wireFormat"/>   
+            type="sofia:WireFormatJMSObjectType"/>
    <!--  -->
                    
    <!--  operation selectors -->
    <!-- -->      
    <complexType name="OperationSelectorJMSDefaultType">
       <complexContent>
-         <extension base="sca:OperationSelectorType"/>
+         <extension base="sofia:OperationSelectorType"/>
       </complexContent>
    </complexType>    
    <element name="operationSelector.jmsdefault" 
-            type="sofia:OperationSelectorJMSDefaultType"
-            substitutionGroup="sca:operationSelector"/>            
+            type="sofia:OperationSelectorJMSDefaultType"/>
 
    <complexType name="OperationSelectorJMSUserPropType">
       <complexContent>
-         <extension base="sca:OperationSelectorType">
+         <extension base="sofia:OperationSelectorType">
              <attribute name="propertyName" type="string"/>           
          </extension>         
       </complexContent>
    </complexType>    
    <element name="operationSelector.jmsUserProp" 
-            type="sofia:OperationSelectorJMSUserPropType"
-            substitutionGroup="sca:operationSelector"/>
+            type="sofia:OperationSelectorJMSUserPropType"/>
 
-	<!-- -->                           
+  <!-- -->                           
 </schema>

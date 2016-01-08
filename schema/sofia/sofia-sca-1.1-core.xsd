@@ -9,6 +9,19 @@
 
    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://www.sofiaframework.org/schema/sca/sca-1.1-cd06.xsd"/>
 
+    <!-- WireFormat Type -->
+    <element name="wireFormat" type="sca:WireFormatType" abstract="true"/>
+    <complexType name="WireFormatType" abstract="true">
+        <anyAttribute namespace="##other" processContents="lax"/>
+    </complexType>
+
+    <!-- OperationSelector Type -->
+    <element name="operationSelector" type="sca:OperationSelectorType"
+             abstract="true"/>
+    <complexType name="OperationSelectorType" abstract="true">
+        <anyAttribute namespace="##other" processContents="lax"/>
+    </complexType>
+
    <!-- Binding -->
    <element name="binding" type="sofia:Binding" abstract="true"/>
    <complexType name="Binding" abstract="true">
@@ -38,10 +51,10 @@
    <complexType name="Implementation" abstract="true">
       <complexContent>
          <extension base="sca:CommonExtensionBase">
-	        <choice minOccurs="0" maxOccurs="unbounded">
-	           <element ref="sca:requires"/>
-	           <element ref="sca:policySetAttachment"/>
-	        </choice>     
+          <choice minOccurs="0" maxOccurs="unbounded">
+             <element ref="sca:requires"/>
+             <element ref="sca:policySetAttachment"/>
+          </choice>     
             <attribute name="requires" type="sca:listOfQNames" 
                        use="optional"/>
             <attribute name="policySets" type="sca:listOfQNames" 
