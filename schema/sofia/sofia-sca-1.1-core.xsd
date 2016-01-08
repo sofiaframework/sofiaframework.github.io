@@ -28,8 +28,8 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
-               <element ref="sca:wireFormat" minOccurs="0" maxOccurs="1" />
-               <element ref="sca:operationSelector" minOccurs="0" 
+               <element ref="sofia:wireFormat" minOccurs="0" maxOccurs="1" />
+               <element ref="sofia:operationSelector" minOccurs="0" 
                         maxOccurs="1" />
                <element ref="sca:requires" minOccurs="0" 
                         maxOccurs="unbounded"/>
