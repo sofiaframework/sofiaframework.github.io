@@ -265,7 +265,7 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
-               <choice minOccurs="0" maxOccurs="1">
+               <choice minOccurs="1" maxOccurs="1">
                   <element ref="sca:implementation"/>
                   <any namespace="##other" processContents="lax"/>
                </choice>
