@@ -11,10 +11,10 @@
     <!-- sofia-sca -->
     <include schemaLocation="http://www.sofiaframework.org/schema/sofia/sofia-sca-1.1.xsd"/>
 
-    <include schemaLocation="sofia-1.0-binding.xsd"/>
+    <!-- sofia -->
+    <include schemaLocation="sofia-1.0-binding-rpc.xsd"/>
     <include schemaLocation="sofia-1.0-radiance.xsd"/>
     <include schemaLocation="sofia-1.0-webx.xsd"/>
-
 
 
 </schema>

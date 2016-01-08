@@ -20,16 +20,11 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://www.sofiaframework.org/schema/sca">
 
-<!--
-    <import namespace="http://www.w3.org/ns/wsdl-instance" schemaLocation="wsdli.xsd"/>
--->
     <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://www.sofiaframework.org/schema/sca/sca-1.1-cd06.xsd"/>
 
     <include schemaLocation="sofia-sca-1.1-core.xsd"/>
     <include schemaLocation="sofia-sca-1.1-binding-jms.xsd"/>
-    
     <include schemaLocation="sofia-sca-1.1-binding-rest.xsd"/>
-
     <include schemaLocation="sofia-sca-1.1-contribution-resource.xsd"/>
 
 </schema>

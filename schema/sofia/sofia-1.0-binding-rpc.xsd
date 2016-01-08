@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        xmlns:sofia="http://www.sofiaframework.org/schema/sca"
-        xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-        targetNamespace="http://www.sofiaframework.org/schema/sca"
-        elementFormDefault="qualified">
+		targetNamespace="http://www.sofiaframework.org/schema/sca"
+		xmlns:sofia="http://www.sofiaframework.org/schema/sca"
+		elementFormDefault="qualified">
 
-    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://www.sofiaframework.org/schema/sca/sca-1.1-cd06.xsd"/>
+	<include schemaLocation="http://www.sofiaframework.org/schema/sofia/sofia-sca-1.1-core.xsd"/>
 
-	<element name="binding.rpc" type="sofia:BaseRPCBinding" substitutionGroup="sca:binding"/>
+	<element name="binding.rpc" type="sofia:BaseRPCBinding"/>
 
 	<complexType name="BaseRPCBinding">
 		<complexContent>
-			<extension base="sca:Binding">
+			<extension base="sofia:Binding">
 				<sequence>
 					<element name="operationProperties" minOccurs="0">
 						<complexType>
@@ -54,9 +53,9 @@
 				</attribute>
 				<attribute name="route" type="integer"/>
 				<attribute name="routeCheck" type="boolean"/>
+				<attribute name="enableTXC" type="boolean"/>
 				<!-- reference -->
 				<attribute name="dubboVersion" type="string"/>
-				<attribute name="asyncallMethods" type="string"/>
 				<attribute name="proxyStyle" type="string"/>
 				<attribute name="connectionNum" type="integer"/>
 				<attribute name="generic" type="string"/>
@@ -64,6 +63,7 @@
 				<attribute name="filter" type="string"/>
 				<attribute name="secureKey" type="string"/>
 				<attribute name="maxWaitTimeForCsAddress" type="integer"/>
+				<attribute name="broadcast" type="boolean"/>
 				<anyAttribute namespace="##any" processContents="lax" />
 			</extension>
 		</complexContent>

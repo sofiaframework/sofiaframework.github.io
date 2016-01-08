@@ -1,22 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ Copyright 1999-2101 Alibaba.com. All rights reserved.
   ~ This software is the confidential and proprietary information of Alibaba.com ("Confidential Information").
   ~ You shall not disclose such Confidential Information and shall use it only in accordance with the terms of the license agreement you entered into with Alibaba.com.
   -->
-
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        xmlns:sofia="http://www.sofiaframework.org/schema/sca"
-        xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
         targetNamespace="http://www.sofiaframework.org/schema/sca"
+        xmlns:sofia="http://www.sofiaframework.org/schema/sca"
         elementFormDefault="qualified">
 
-    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://www.sofiaframework.org/schema/sca/sca-1.1-cd06.xsd"/>
+    <include schemaLocation="http://www.sofiaframework.org/schema/sofia/sofia-sca-1.1-core.xsd"/>
 
-    <element name="implementation.webx" type="sofia:WebxImplementation" substitutionGroup="sca:implementation"/>
+    <element name="implementation.webx" type="sofia:WebxImplementation"/>
 
     <complexType name="WebxImplementation">
         <complexContent>
-            <extension base="sca:Implementation">
+            <extension base="sofia:Implementation">
                 <attribute name="location" type="string"/>
             </extension>
         </complexContent>
