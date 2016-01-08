@@ -48,7 +48,7 @@
 
    <complexType name="RESTResponse">
       <sequence>
-         <element ref="sca:wireFormat" minOccurs="0" />
+         <element ref="sofia:wireFormat" minOccurs="0" />
       </sequence>
    </complexType>
 
@@ -87,20 +87,18 @@
    <!--  operation selectors -->
    <complexType name="OperationSelectorJAXRSType">
       <complexContent>
-         <extension base="sca:OperationSelectorType"/>
+         <extension base="sofia:OperationSelectorType"/>
       </complexContent>
    </complexType>
    <element name="operationSelector.jaxrs"
-            type="sofia:OperationSelectorJAXRSType"
-            substitutionGroup="sca:operationSelector"/>
+            type="sofia:OperationSelectorJAXRSType"/>
 
    <complexType name="OperationSelectorRPCType">
       <complexContent>
-         <extension base="sca:OperationSelectorType"/>
+         <extension base="sofia:OperationSelectorType"/>
       </complexContent>
    </complexType>
    <element name="operationSelector.rpc"
-            type="sofia:OperationSelectorRPCType"
-            substitutionGroup="sca:operationSelector"/>
+            type="sofia:OperationSelectorRPCType"/>
 
 </schema>

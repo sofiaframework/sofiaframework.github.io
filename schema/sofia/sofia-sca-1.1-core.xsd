@@ -10,13 +10,13 @@
    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://www.sofiaframework.org/schema/sca/sca-1.1-cd06.xsd"/>
 
     <!-- WireFormat Type -->
-    <element name="wireFormat" type="sca:WireFormatType" abstract="true"/>
+    <element name="wireFormat" type="sofia:WireFormatType" abstract="true"/>
     <complexType name="WireFormatType" abstract="true">
         <anyAttribute namespace="##other" processContents="lax"/>
     </complexType>
 
     <!-- OperationSelector Type -->
-    <element name="operationSelector" type="sca:OperationSelectorType"
+    <element name="operationSelector" type="sofia:OperationSelectorType"
              abstract="true"/>
     <complexType name="OperationSelectorType" abstract="true">
         <anyAttribute namespace="##other" processContents="lax"/>
