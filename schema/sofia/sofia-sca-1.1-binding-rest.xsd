@@ -67,14 +67,14 @@
 
   <element name="header" type="sofia:HTTPHeaderType" />
 
-    <!--  wire formats -->
+   <!--  wire formats -->
     <complexType name="WireFormatJSONType">
       <complexContent>
          <extension base="sofia:WireFormatType"/>
       </complexContent>
    </complexType>
 
-   <element name="wireFormat.json" type="sofia:WireFormatJSONType"/>
+   <element name="wireFormat.json" type="sofia:WireFormatJSONType" substitutionGroup="sofia:wireFormat"/>
 
    <complexType name="WireFormatXMLType">
       <complexContent>
@@ -82,7 +82,7 @@
       </complexContent>
    </complexType>
 
-   <element name="wireFormat.xml" type="sofia:WireFormatXMLType"/>
+   <element name="wireFormat.xml" type="sofia:WireFormatXMLType" substitutionGroup="sofia:wireFormat"/>
 
    <!--  operation selectors -->
    <complexType name="OperationSelectorJAXRSType">
@@ -91,7 +91,7 @@
       </complexContent>
    </complexType>
    <element name="operationSelector.jaxrs"
-            type="sofia:OperationSelectorJAXRSType"/>
+            type="sofia:OperationSelectorJAXRSType" substitutionGroup="sofia:operationSelector"/>
 
    <complexType name="OperationSelectorRPCType">
       <complexContent>
@@ -99,6 +99,6 @@
       </complexContent>
    </complexType>
    <element name="operationSelector.rpc"
-            type="sofia:OperationSelectorRPCType"/>
+            type="sofia:OperationSelectorRPCType" substitutionGroup="sofia:operationSelector"/>
 
 </schema>
