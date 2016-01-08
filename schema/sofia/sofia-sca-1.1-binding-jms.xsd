@@ -7,123 +7,119 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
- * under the License.    
+ * under the License.
 -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" 
-    targetNamespace="http://www.sofiaframework.org/schema/sca"
-    xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
-    xmlns:sofia="http://www.sofiaframework.org/schema/sca"
-    elementFormDefault="qualified">
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.sofiaframework.org/schema/sca"
+        xmlns:sofia="http://www.sofiaframework.org/schema/sca"
+        elementFormDefault="qualified">
 
-   <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://www.sofiaframework.org/schema/sca/sca-binding-jms-1.1-csd05.xsd"/>
-   
-   <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912"  schemaLocation="http://www.sofiaframework.org/schema/sca/sca-1.1-cd06.xsd"/>
+    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://www.sofiaframework.org/schema/sca/sca-binding-jms-1.1-csd05.xsd"/>
+
+    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912"  schemaLocation="http://www.sofiaframework.org/schema/sca/sca-1.1-cd06.xsd"/>
 
     <include schemaLocation="sofia-sca-1.1-core.xsd"/>
-        
-   <!--  wire formats -->
-   <!-- -->
-   <complexType name="WireFormatJMSDefaultType">
-      <complexContent>
-         <extension base="sofia:WireFormatType">
-             <attribute name="sendFormat" default="bytes">
-                  <simpleType>
-                      <restriction base="string">
-                         <enumeration value="text"/>
-                         <enumeration value="bytes"/>
-                      </restriction>
-                  </simpleType>
-             </attribute>
-         </extension>
-      </complexContent>
-   </complexType>
-   <element name="wireFormat.jmsDefault"
-            type="sofia:WireFormatJMSDefaultType"/>
 
-  <complexType name="WireFormatJMSTextType">
-      <complexContent>
-         <extension base="sofia:WireFormatType"/>
-      </complexContent>
-   </complexType>
-   <element name="wireFormat.jmsText" 
-            type="sofia:WireFormatJMSTextType"/>
-                  
-   <complexType name="WireFormatJMSTextXMLType">
-      <complexContent>
-         <extension base="sofia:WireFormatType"/>
-      </complexContent>
-   </complexType>
-   <element name="wireFormat.jmsTextXML" 
-            type="sofia:WireFormatJMSTextXMLType"/>
-      
-   <complexType name="WireFormatJMSBytesType">
-      <complexContent>
-         <extension base="sofia:WireFormatType"/>
-      </complexContent>
-   </complexType>
-   <element name="wireFormat.jmsBytes" 
-            type="sofia:WireFormatJMSBytesType"/>
-   
-   <complexType name="WireFormatJMSBytesXMLType">
-      <complexContent>
-         <extension base="sofia:WireFormatType"/>
-      </complexContent>
-   </complexType>
-   <element name="wireFormat.jmsBytesXML" 
-            type="sofia:WireFormatJMSBytesXMLType"/>
-   
-   <complexType name="WireFormatJMSObjectType">
-      <complexContent>
-         <extension base="sofia:WireFormatType">
-             <attribute name="wrapSingle" default="false">
-                  <simpleType>
-                      <restriction base="string">
-                         <enumeration value="true"/>
-                         <enumeration value="false"/>
-                      </restriction>
-                  </simpleType>             
-             </attribute>
-         </extension>
-      </complexContent>
-   </complexType>       
-   <element name="wireFormat.jmsObject" 
-            type="sofia:WireFormatJMSObjectType"/>
-   <!--  -->
-                   
-   <!--  operation selectors -->
-   <!-- -->      
-   <complexType name="OperationSelectorJMSDefaultType">
-      <complexContent>
-         <extension base="sofia:OperationSelectorType"/>
-      </complexContent>
-   </complexType>    
-   <element name="operationSelector.jmsdefault" 
-            type="sofia:OperationSelectorJMSDefaultType"/>
+    <!--  wire formats -->
+    <complexType name="WireFormatJMSDefaultType">
+        <complexContent>
+            <extension base="sofia:WireFormatType">
+                <attribute name="sendFormat" default="bytes">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="text"/>
+                            <enumeration value="bytes"/>
+                        </restriction>
+                    </simpleType>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+    <element name="wireFormat.jmsDefault"
+             type="sofia:WireFormatJMSDefaultType" substitutionGroup="sofia:wireFormat"/>
+
+    <complexType name="WireFormatJMSTextType">
+        <complexContent>
+            <extension base="sofia:WireFormatType"/>
+        </complexContent>
+    </complexType>
+    <element name="wireFormat.jmsText"
+             type="sofia:WireFormatJMSTextType" substitutionGroup="sofia:wireFormat"/>
+
+    <complexType name="WireFormatJMSTextXMLType">
+        <complexContent>
+            <extension base="sofia:WireFormatType"/>
+        </complexContent>
+    </complexType>
+    <element name="wireFormat.jmsTextXML"
+             type="sofia:WireFormatJMSTextXMLType" substitutionGroup="sofia:wireFormat"/>
+
+    <complexType name="WireFormatJMSBytesType">
+        <complexContent>
+            <extension base="sofia:WireFormatType"/>
+        </complexContent>
+    </complexType>
+    <element name="wireFormat.jmsBytes"
+             type="sofia:WireFormatJMSBytesType" substitutionGroup="sofia:wireFormat"/>
+
+    <complexType name="WireFormatJMSBytesXMLType">
+        <complexContent>
+            <extension base="sofia:WireFormatType"/>
+        </complexContent>
+    </complexType>
+    <element name="wireFormat.jmsBytesXML"
+             type="sofia:WireFormatJMSBytesXMLType" substitutionGroup="sofia:wireFormat"/>
+
+    <complexType name="WireFormatJMSObjectType">
+        <complexContent>
+            <extension base="sofia:WireFormatType">
+                <attribute name="wrapSingle" default="false">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="true"/>
+                            <enumeration value="false"/>
+                        </restriction>
+                    </simpleType>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+    <element name="wireFormat.jmsObject"
+             type="sofia:WireFormatJMSObjectType" substitutionGroup="sofia:wireFormat"/>
+
+    <!--  operation selectors -->
+    <complexType name="OperationSelectorJMSDefaultType">
+        <complexContent>
+            <extension base="sofia:OperationSelectorType"/>
+        </complexContent>
+    </complexType>
+    <element name="operationSelector.jmsdefault"
+             type="sofia:OperationSelectorJMSDefaultType" substitutionGroup="sofia:operationSelector"/>
 
     <complexType name="operation">
         <attribute name="name" type="string" use="required" />
         <attribute name="selectedOperation" type="string" use="required" />
     </complexType>
 
-   <complexType name="OperationSelectorJMSUserPropType">
-      <complexContent>
-         <extension base="sofia:OperationSelectorType">
-             <sequence>
-                 <element name="operation" type="sofia:operation" minOccurs="0" maxOccurs="unbounded"/>
-             </sequence>
-             <attribute name="propertyName" type="string"/>           
-         </extension>         
-      </complexContent>
-   </complexType>    
-   <element name="operationSelector.jmsUserProp" 
-            type="sofia:OperationSelectorJMSUserPropType"/>
+    <complexType name="OperationSelectorJMSUserPropType">
+        <complexContent>
+            <extension base="sofia:OperationSelectorType">
+                <sequence>
+                    <element name="operation" type="sofia:operation" minOccurs="0" maxOccurs="unbounded"/>
+                </sequence>
+                <attribute name="propertyName" type="string"/>
+            </extension>
+        </complexContent>
+    </complexType>
+    <element name="operationSelector.jmsUserProp"
+             type="sofia:OperationSelectorJMSUserPropType" substitutionGroup="sofia:operationSelector"/>
 
 </schema>

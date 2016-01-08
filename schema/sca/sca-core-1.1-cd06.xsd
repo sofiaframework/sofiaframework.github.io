@@ -194,8 +194,8 @@
             <sequence>
                <element ref="sca:wireFormat" minOccurs="0" maxOccurs="1"/>
                <element ref="sca:operationSelector" minOccurs="0" maxOccurs="1"/>
-               <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-               <element ref="sca:requires" minOccurs="0" 
+               <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="1"/>
+               <element ref="sca:requires" minOccurs="0"
                         maxOccurs="unbounded"/>
                <element ref="sca:policySetAttachment" minOccurs="0" 
                         maxOccurs="unbounded"/>

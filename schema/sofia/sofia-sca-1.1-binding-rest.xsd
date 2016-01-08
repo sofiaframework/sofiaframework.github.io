@@ -26,14 +26,14 @@
     <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="http://www.sofiaframework.org/schema/sca/sca-1.1-cd06.xsd"/>
     <include schemaLocation="sofia-sca-1.1-core.xsd"/>
 
-    <element name="binding.rest" type="sofia:RESTBinding"/>
+    <element name="binding.rest" type="sofia:RESTBinding" substitutionGroup="sofia:binding"/>
 
 
     <complexType name="RESTBinding">
         <complexContent>
             <extension base="sofia:Binding">
                 <sequence>
-                  <element name="response" type="sofia:RESTResponse" minOccurs="0"/>
+                  <element name="response" type="sofia:RESTResponse" minOccurs="0" maxOccurs="1"/>
                   <element ref="sofia:http-headers" minOccurs="0" maxOccurs="1"/>
                     <!-- any namespace="##targetNamespace" processContents="lax" minOccurs="0"
                          maxOccurs="unbounded"/ -->
@@ -67,7 +67,7 @@
 
   <element name="header" type="sofia:HTTPHeaderType" />
 
-   <!--  wire formats -->
+    <!--  wire formats -->
     <complexType name="WireFormatJSONType">
       <complexContent>
          <extension base="sofia:WireFormatType"/>
