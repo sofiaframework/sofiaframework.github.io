@@ -53,10 +53,10 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
-               <element ref="sca:include" minOccurs="0" 
-                        maxOccurs="unbounded"/>
                <any namespace="##other" processContents="lax" minOccurs="0" 
                     maxOccurs="unbounded"/>
+               <element ref="sca:include" minOccurs="0" 
+                        maxOccurs="unbounded"/>
                <choice minOccurs="0" maxOccurs="unbounded">
                   <element ref="sca:requires"/>
                   <element ref="sca:policySetAttachment"/>
@@ -66,8 +66,6 @@
                   <element name="reference" type="sca:Reference"/>
                   <element name="wire" type="sca:Wire"/>
                </choice>
-               <any namespace="##other" processContents="lax" minOccurs="0" 
-                    maxOccurs="unbounded"/>
             </sequence>
             <attribute name="name" type="NCName" use="required"/>
             <attribute name="targetNamespace" type="anyURI" use="required"/>
