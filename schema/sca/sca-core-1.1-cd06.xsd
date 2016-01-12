@@ -55,6 +55,8 @@
             <sequence>
                <element ref="sca:include" minOccurs="0" 
                         maxOccurs="unbounded"/>
+               <any namespace="##other" processContents="lax" minOccurs="0" 
+                    maxOccurs="unbounded"/>
                <choice minOccurs="0" maxOccurs="unbounded">
                   <element ref="sca:requires"/>
                   <element ref="sca:policySetAttachment"/>
