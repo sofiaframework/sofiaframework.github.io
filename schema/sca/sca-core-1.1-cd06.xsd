@@ -53,6 +53,7 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
+              <!-- Implement Placeholder Feature, So Transfer Any Element from the tail to the head -->
                <any namespace="##other" processContents="lax" minOccurs="0" 
                     maxOccurs="unbounded"/>
                <element ref="sca:include" minOccurs="0" 
