@@ -25,6 +25,6 @@
     <include schemaLocation="sofia-sca-1.1-core.xsd"/>
     <include schemaLocation="sofia-sca-1.1-binding-jms.xsd"/>
     <include schemaLocation="sofia-sca-1.1-binding-rest.xsd"/>
-    <!--<include schemaLocation="sofia-sca-1.1-contribution-resource.xsd"/>-->
+    <include schemaLocation="sofia-sca-1.1-contribution-resource.xsd"/>
 
 </schema>
