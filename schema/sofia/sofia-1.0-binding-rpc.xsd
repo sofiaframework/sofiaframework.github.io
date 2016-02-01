@@ -28,7 +28,6 @@
 						</complexType>
 					</element>
 				</sequence>
-				<attribute name="uri" type="string" use="required"/>
 				<attribute name="group" type="string"/>
 				<attribute name="maxPoolSize" type="integer"/>
 				<attribute name="configStyle" type="string"/>
