@@ -44,6 +44,26 @@
         </xsd:attribute>
     </xsd:complexType>
 
+    <xsd:element name="producer">
+        <xsd:complexType>
+            <xsd:attribute name="name" use="required">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string" />
+                </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="type" use="required">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string" />
+                </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="target" use="required">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string" />
+                </xsd:simpleType>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
     <xsd:element name="property">
         <xsd:complexType>
             <xsd:attribute name="id" use="optional">
@@ -86,6 +106,26 @@
             </xsd:simpleType>
         </xsd:attribute>
     </xsd:complexType>
+
+    <xsd:element name="consumer">
+        <xsd:complexType>
+            <xsd:attribute name="name" use="required">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string" />
+                </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="type" use="required">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string" />
+                </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="target" use="required">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string" />
+                </xsd:simpleType>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
 
     <xsd:complexType name="CallBackType">
         <xsd:attribute name="name" type="xsd:string" use="required" />
