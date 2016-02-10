@@ -40,6 +40,8 @@
                   <element name="reference" 
                      type="sca:ComponentTypeReference"/>
                   <element name="property" type="sca:Property"/>
+                  <element name="consumer" type="sca:ComponentConsumer"/>
+                  <element name="producer" type="sca:ComponentProducer"/>
                </choice>
                <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
             </sequence>
@@ -53,10 +55,10 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
-              <!-- Implement Placeholder Feature, So Transfer Any Element from the tail to the head -->
-               <any namespace="##other" processContents="lax" minOccurs="0" 
+               <!-- Implement Placeholder Feature, So Transfer Any Element from the tail to the head -->
+               <any namespace="##other" processContents="lax" minOccurs="0"
                     maxOccurs="unbounded"/>
-               <element ref="sca:include" minOccurs="0" 
+               <element ref="sca:include" minOccurs="0"
                         maxOccurs="unbounded"/>
                <choice minOccurs="0" maxOccurs="unbounded">
                   <element ref="sca:requires"/>
@@ -65,6 +67,9 @@
                   <element name="property" type="sca:Property"/>
                   <element name="component" type="sca:Component"/>
                   <element name="reference" type="sca:Reference"/>
+                  <element name="channel" type="sca:Channel"/>
+                  <element name="consumer" type="sca:Consumer"/>
+                  <element name="producer" type="sca:Producer"/>
                   <element name="wire" type="sca:Wire"/>
                </choice>
             </sequence>
@@ -139,14 +144,97 @@
    <complexType name="Reference">
       <complexContent>
          <extension base="sca:Contract">
-            <attribute name="target" type="sca:listOfAnyURIs" 
+            <attribute name="target" type="sca:listOfAnyURIs"
                        use="optional"/>
-            <attribute name="wiredByImpl" type="boolean" use="optional" 
+            <attribute name="wiredByImpl" type="boolean" use="optional"
                        default="false"/>
-            <attribute name="multiplicity" type="sca:Multiplicity" 
+            <attribute name="multiplicity" type="sca:Multiplicity"
                        use="required"/>
-            <attribute name="promote" type="sca:listOfAnyURIs" 
+            <attribute name="promote" type="sca:listOfAnyURIs"
                        use="required"/>
+         </extension>
+      </complexContent>
+   </complexType>
+
+   <complexType name="ConsumerContract">
+      <complexContent>
+         <extension base="sca:CommonExtensionBase">
+         <sequence>
+            <element ref="sca:filters" minOccurs="0" maxOccurs="1" />
+            <element ref="sca:requires" minOccurs="0"
+                     maxOccurs="unbounded"/>
+            <element ref="sca:policySetAttachment" minOccurs="0"
+                     maxOccurs="unbounded"/>
+            <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
+         </sequence>
+         <attribute name="name" type="NCName" use="required" />
+         <attribute name="requires" type="sca:listOfQNames"
+                    use="optional" />
+         <attribute name="policySets" type="sca:listOfQNames"
+                    use="optional"/>
+         </extension>
+      </complexContent>
+
+   </complexType>
+
+   <complexType name="Consumer">
+      <complexContent>
+         <extension base="sca:ConsumerContract">
+            <sequence/>
+            <attribute name="promote" type="sca:listOfAnyURIs"
+                       use="required"/>
+         </extension>
+      </complexContent>
+   </complexType>
+
+   <complexType name="ProducerContract">
+      <complexContent>
+         <extension base="sca:CommonExtensionBase">
+         <sequence>
+            <element ref="sca:eventType" minOccurs="0" maxOccurs="1" />
+            <element ref="sca:requires" minOccurs="0"
+                     maxOccurs="unbounded"/>
+            <element ref="sca:policySetAttachment" minOccurs="0"
+                     maxOccurs="unbounded"/>
+            <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
+         </sequence>
+         <attribute name="name" type="NCName" use="required" />
+         <attribute name="requires" type="sca:listOfQNames"
+                    use="optional" />
+         <attribute name="policySets" type="sca:listOfQNames"
+                    use="optional"/>
+         </extension>
+      </complexContent>
+   </complexType>
+
+   <complexType name="Producer">
+      <complexContent>
+         <extension base="sca:ProducerContract">
+            <sequence/>
+            <attribute name="promote" type="sca:listOfAnyURIs"
+                       use="required"/>
+         </extension>
+      </complexContent>
+   </complexType>
+
+   <complexType name="Channel">
+      <complexContent>
+         <extension base="sca:CommonExtensionBase">
+            <sequence>
+               <element ref="sca:filters" minOccurs="0" maxOccurs="1" />
+               <element ref="sca:binding" minOccurs="0"
+                        maxOccurs="1" />
+               <element ref="sca:requires" minOccurs="0"
+                        maxOccurs="unbounded"/>
+               <element ref="sca:policySetAttachment" minOccurs="0"
+                        maxOccurs="unbounded"/>
+               <element ref="sca:extensions" minOccurs="0" maxOccurs="1" />
+            </sequence>
+            <attribute name="name" type="NCName" use="required" />
+            <attribute name="requires" type="sca:listOfQNames"
+                       use="optional" />
+            <attribute name="policySets" type="sca:listOfQNames"
+                       use="optional"/>
          </extension>
       </complexContent>
    </complexType>
@@ -313,6 +401,26 @@
          </extension>
       </complexContent>
    </complexType>
+
+   <complexType name="ComponentConsumer">
+      <complexContent>
+         <extension base="sca:ConsumerContract">
+            <sequence/>
+            <attribute name="source" type="sca:listOfAnyURIs"
+                       use="optional"/>
+         </extension>
+      </complexContent>
+   </complexType>
+
+   <complexType name="ComponentProducer">
+      <complexContent>
+         <extension base="sca:ProducerContract">
+            <sequence/>
+            <attribute name="target" type="sca:listOfAnyURIs"
+                       use="optional"/>
+         </extension>
+      </complexContent>
+   </complexType>
    
    <!-- Component Type Reference -->
    <complexType name="ComponentTypeReference">
@@ -470,4 +578,31 @@
          <enumeration value="ifnotexist" />
       </restriction>
    </simpleType>
+
+   <element name="filters" type="sca:Filter"/>
+   <complexType name="Filter">
+      <sequence>
+         <choice minOccurs="0" maxOccurs="unbounded">
+            <element ref="sca:eventType" />
+            <element ref="sca:body.xpath1" />
+         </choice>
+         <any namespace="##other" processContents="lax" minOccurs="0"
+              maxOccurs="unbounded"/>
+      </sequence>
+      <anyAttribute namespace="##other" processContents="lax"/>
+   </complexType>
+   <element name="eventType" abstract="true"/>
+   <element name="eventType.sca" type="sca:EventType.sca"
+            substitutionGroup="sca:eventType"/>
+   <complexType name="EventType.sca">
+      <sequence>
+         <any namespace="##other" processContents="lax" minOccurs="0"
+              maxOccurs="unbounded"/>
+      </sequence>
+      <attribute name="qnames" type="sca:listOfQNames" />
+      <attribute name="namespaces" type="sca:listOfAnyURIs" />
+      <anyAttribute namespace="##other" processContents="lax" />
+   </complexType>
+
+   <element name="body.xpath1" type="string" />
 </schema>
