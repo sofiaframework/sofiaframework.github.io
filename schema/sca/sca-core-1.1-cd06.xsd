@@ -362,6 +362,8 @@
                   <element name="service" type="sca:ComponentService"/>
                   <element name="reference" type="sca:ComponentReference"/>
                   <element name="property" type="sca:PropertyValue"/>
+                  <element name="producer" type="sca:ComponentProducer"/>
+                  <element name="consumer" type="sca:ComponentConsumer"/>
                   <element ref="sca:requires"/>
                   <element ref="sca:policySetAttachment"/>
                </choice>
