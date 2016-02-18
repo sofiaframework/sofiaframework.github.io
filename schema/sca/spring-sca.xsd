@@ -56,7 +56,7 @@
                     <xsd:restriction base="xsd:string" />
                 </xsd:simpleType>
             </xsd:attribute>
-            <xsd:attribute name="target" use="required">
+            <xsd:attribute name="target" use="optional">
                 <xsd:simpleType>
                     <xsd:restriction base="xsd:string" />
                 </xsd:simpleType>
