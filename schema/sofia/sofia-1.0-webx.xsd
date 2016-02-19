@@ -9,7 +9,7 @@
         xmlns:sofia="http://www.sofiaframework.org/schema/sca"
         elementFormDefault="qualified">
 
-    <include schemaLocation="http://www.sofiaframework.org/schema/sofia/sofia-sca-1.1-core.xsd"/>
+    <include schemaLocation="sofia-sca-1.1-core.xsd"/>
 
     <element name="implementation.webx" type="sofia:WebxImplementation"/>
 
