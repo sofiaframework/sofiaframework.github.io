@@ -11,10 +11,6 @@
     <!-- sofia-sca -->
     <include schemaLocation="sofia-sca-1.1.xsd"/>
 
-    <include schemaLocation="sofia-sca-test.xsd"/>
-
-    <include schemaLocation="../sofia-sca-test2.xsd"/>
-
     <!-- sofia -->
     <include schemaLocation="sofia-1.0-binding-rpc.xsd"/>
     <include schemaLocation="sofia-1.0-radiance.xsd"/>
