@@ -10,10 +10,10 @@
    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="sca-1.1-cd06.xsd"/>
 
     <!-- WireFormat Type -->
-    <!--<element name="wireFormat" type="sofia:WireFormatType" abstract="true"/>
+    <element name="wireFormat" type="sofia:WireFormatType" abstract="true"/>
     <complexType name="WireFormatType" abstract="true">
         <anyAttribute namespace="##other" processContents="lax"/>
-    </complexType>-->
+    </complexType>
 
     <!-- OperationSelector Type -->
     <element name="operationSelector" type="sofia:OperationSelectorType"
@@ -28,7 +28,7 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
-               <!--<element ref="sofia:wireFormat" minOccurs="0" maxOccurs="1" />-->
+               <element ref="sofia:wireFormat" minOccurs="0" maxOccurs="1" />
                <element ref="sofia:operationSelector" minOccurs="0" 
                         maxOccurs="1" />
                <element ref="sca:requires" minOccurs="0" 
