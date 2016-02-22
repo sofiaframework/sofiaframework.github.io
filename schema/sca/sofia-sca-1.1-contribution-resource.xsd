@@ -23,7 +23,7 @@
     xmlns:sofia="http://www.sofiaframework.org/schema/sca"
     elementFormDefault="qualified">
 
-    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="sca-1.1-cd06.xsd"/>
+    <import namespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" schemaLocation="sca-contribution-1.1-cd06.xsd"/>
 
     <element name="import.resource" type="sofia:ImportResourceType" substitutionGroup="sca:importBase"/>
     <complexType name="ImportResourceType">

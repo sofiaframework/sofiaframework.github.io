@@ -7,17 +7,20 @@
    
    <include schemaLocation="sca-core-1.1-cd06.xsd"/>
 
-   <include schemaLocation="sca-interface-java-1.1-csd05.xsd"/>
+   <include schemaLocation="sca-interface-java-1.1-cd05.xsd"/>
    <include schemaLocation="sca-interface-wsdl-1.1-cd06.xsd"/>
    <include schemaLocation="sca-interface-cpp-1.1-cd06.xsd"/>
    <include schemaLocation="sca-interface-c-1.1-cd06.xsd"/>
 
-   <include schemaLocation="sca-implementation-java-1.1-csd03.xsd"/>
+   <include schemaLocation="sca-implementation-java-1.1-cd03.xsd"/>
    <include schemaLocation="sca-implementation-composite-1.1-cd06.xsd"/>
    <include schemaLocation="sca-implementation-cpp-1.1-cd06.xsd"/>
    <include schemaLocation="sca-implementation-c-1.1-cd06.xsd"/>
    <include schemaLocation="sca-implementation-bpel-1.1-cd03.xsd"/>
-   <include schemaLocation="sca-implementation-spring-1.1-csd01.xsd"/>
+   <include schemaLocation="sca-implementation-spring-1.1-cd01.xsd"/>
+
+   <!-- [rfeng] Added by Tuscany -->
+   <include schemaLocation="sca-jee-1.1-wd03.xsd"/>
 
    <!-- Remove it because violate UPA -->
    <!-- WS reference EndpointReference which extend SCA Binding and use another namespace  -->
@@ -34,6 +37,6 @@
    <include schemaLocation="sca-contribution-1.1-cd06.xsd"/>
    <include schemaLocation="sca-contribution-cpp-1.1-cd06.xsd"/>
    <include schemaLocation="sca-contribution-c-1.1-cd06.xsd"/>
-   <include schemaLocation="sca-contribution-java-1.1-csd03.xsd"/>
+   <include schemaLocation="sca-contribution-java-1.1-cd03.xsd"/>
    
 </schema>
