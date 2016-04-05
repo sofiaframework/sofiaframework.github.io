@@ -6,25 +6,45 @@
 
 	<include schemaLocation="sofia-sca-1.1-core.xsd"/>
 
+	<complexType name="BaseRPCOperationProperties">
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="timeout" type="integer"/>
+	</complexType>
+
+
 	<element name="binding.rpc" type="sofia:BaseRPCBinding"/>
 
 	<complexType name="BaseRPCBinding">
 		<complexContent>
 			<extension base="sofia:Binding">
 				<sequence>
+					<element name="operationProperties" type="sofia:BaseRPCOperationProperties" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="binding.hsf" type="sofia:HsfBinding"/>
+
+	<complexType name="HsfBinding">
+		<complexContent>
+			<extension base="sofia:Binding">
+				<sequence>
 					<element name="operationProperties" minOccurs="0">
 						<complexType>
-							<attribute name="name" type="string" use="required"/>
-							<attribute name="timeout" type="integer"/>
-							<attribute name="asyncType">
-								<simpleType>
-									<restriction base="string">
-										<enumeration value="FUTURE"/>
-										<enumeration value="CALLBACK"/>
-									</restriction>
-								</simpleType>
-							</attribute>
-							<attribute name="callbackListener" type="string"/>
+							<complexContent>
+								<extension base="sofia:BaseRPCOperationProperties">
+									<attribute name="asyncType">
+										<simpleType>
+											<restriction base="string">
+												<enumeration value="FUTURE"/>
+												<enumeration value="CALLBACK"/>
+											</restriction>
+										</simpleType>
+									</attribute>
+									<attribute name="callbackListener" type="string"/>
+								</extension>
+							</complexContent>
 						</complexType>
 					</element>
 				</sequence>
