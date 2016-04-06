@@ -12,18 +12,6 @@
 	</complexType>
 
 
-	<element name="binding.rpc" type="sofia:BaseRPCBinding"/>
-
-	<complexType name="BaseRPCBinding">
-		<complexContent>
-			<extension base="sofia:Binding">
-				<sequence>
-					<element name="operationProperties" type="sofia:BaseRPCOperationProperties" minOccurs="0"/>
-				</sequence>
-			</extension>
-		</complexContent>
-	</complexType>
-
 	<element name="binding.hsf" type="sofia:HsfBinding"/>
 
 	<complexType name="HsfBinding">
