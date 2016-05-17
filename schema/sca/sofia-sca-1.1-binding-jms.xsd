@@ -62,6 +62,15 @@
     <element name="wireFormat.jmsTextXML"
              type="sofia:WireFormatJMSTextXMLType" substitutionGroup="sofia:wireFormat"/>
 
+    <complexType name="WireFormatJMSTextJSONType">
+        <complexContent>
+            <extension base="sofia:WireFormatType"/>
+        </complexContent>
+    </complexType>
+    <element name="wireFormat.jmsTextJSON"
+             type="sofia:WireFormatJMSTextJSONType"
+             substitutionGroup="sofia:wireFormat"/>
+
     <complexType name="WireFormatJMSBytesType">
         <complexContent>
             <extension base="sofia:WireFormatType"/>
@@ -104,17 +113,9 @@
     <element name="operationSelector.jmsdefault"
              type="sofia:OperationSelectorJMSDefaultType" substitutionGroup="sofia:operationSelector"/>
 
-    <complexType name="operation">
-        <attribute name="name" type="string" use="required" />
-        <attribute name="selectedOperation" type="string" use="required" />
-    </complexType>
-
     <complexType name="OperationSelectorJMSUserPropType">
         <complexContent>
             <extension base="sofia:OperationSelectorType">
-                <sequence>
-                    <element name="operation" type="sofia:operation" minOccurs="0" maxOccurs="unbounded"/>
-                </sequence>
                 <attribute name="propertyName" type="string"/>
             </extension>
         </complexContent>

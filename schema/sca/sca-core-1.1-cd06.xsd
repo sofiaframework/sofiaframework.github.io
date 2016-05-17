@@ -6,7 +6,7 @@
    targetNamespace="http://docs.oasis-open.org/ns/opencsa/sca/200912" 
    elementFormDefault="qualified">
 
-   <include schemaLocation="sca-policy-1.1-cd04.xsd"/>  
+   <include schemaLocation="sca-policy-1.1-cd04.xsd"/>	
    <import namespace="http://www.w3.org/XML/1998/namespace" 
            schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 
@@ -58,7 +58,7 @@
                <!-- Implement Placeholder Feature, So Transfer Any Element from the tail to the head -->
                <any namespace="##other" processContents="lax" minOccurs="0"
                     maxOccurs="unbounded"/>
-               <element ref="sca:include" minOccurs="0"
+               <element ref="sca:include" minOccurs="0" 
                         maxOccurs="unbounded"/>
                <choice minOccurs="0" maxOccurs="unbounded">
                   <element ref="sca:requires"/>
@@ -93,10 +93,10 @@
          <extension base="sca:CommonExtensionBase">
             <sequence>
                <element ref="sca:interface" minOccurs="0" maxOccurs="1" />
-               <choice minOccurs="0" maxOccurs="unbounded">
-                  <element ref="sca:binding" />
-                  <any namespace="##other" processContents="lax"/>
-               </choice>
+                <choice minOccurs="0" maxOccurs="unbounded">
+                    <element ref="sca:binding" />
+                    <any namespace="##other" processContents="lax"/>
+                </choice>
                <element ref="sca:callback" minOccurs="0" maxOccurs="1" />
                <element ref="sca:requires" minOccurs="0" 
                         maxOccurs="unbounded"/>
@@ -132,9 +132,9 @@
                <element ref="sca:policySetAttachment"/>
             </choice>
             <attribute name="remotable" type="boolean" use="optional"/>
-          <attribute name="requires" type="sca:listOfQNames" 
+	        <attribute name="requires" type="sca:listOfQNames" 
                use="optional"/>
-          <attribute name="policySets" type="sca:listOfQNames" 
+	        <attribute name="policySets" type="sca:listOfQNames" 
                use="optional"/>
          </extension>
       </complexContent>
@@ -144,13 +144,13 @@
    <complexType name="Reference">
       <complexContent>
          <extension base="sca:Contract">
-            <attribute name="target" type="sca:listOfAnyURIs"
+            <attribute name="target" type="sca:listOfAnyURIs" 
                        use="optional"/>
-            <attribute name="wiredByImpl" type="boolean" use="optional"
+            <attribute name="wiredByImpl" type="boolean" use="optional" 
                        default="false"/>
-            <attribute name="multiplicity" type="sca:Multiplicity"
+            <attribute name="multiplicity" type="sca:Multiplicity" 
                        use="required"/>
-            <attribute name="promote" type="sca:listOfAnyURIs"
+            <attribute name="promote" type="sca:listOfAnyURIs" 
                        use="required"/>
          </extension>
       </complexContent>
@@ -281,10 +281,10 @@
       <complexContent>
          <extension base="sca:CommonExtensionBase">
             <sequence>
-               <element ref="sca:wireFormat" minOccurs="0" maxOccurs="1"/>
-               <element ref="sca:operationSelector" minOccurs="0" maxOccurs="1"/>
+               <element ref="sca:wireFormat" minOccurs="0" maxOccurs="1" />
+               <element ref="sca:operationSelector" minOccurs="0" maxOccurs="1" />
                <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-               <element ref="sca:requires" minOccurs="0"
+               <element ref="sca:requires" minOccurs="0" 
                         maxOccurs="unbounded"/>
                <element ref="sca:policySetAttachment" minOccurs="0" 
                         maxOccurs="unbounded"/>
@@ -462,10 +462,10 @@
    <complexType name="Implementation" abstract="true">
       <complexContent>
          <extension base="sca:CommonExtensionBase">
-          <choice minOccurs="0" maxOccurs="unbounded">
-             <element ref="sca:requires"/>
-             <element ref="sca:policySetAttachment"/>
-          </choice>     
+	        <choice minOccurs="0" maxOccurs="unbounded">
+	           <element ref="sca:requires"/>
+	           <element ref="sca:policySetAttachment"/>
+	        </choice>     
             <attribute name="requires" type="sca:listOfQNames" 
                        use="optional"/>
             <attribute name="policySets" type="sca:listOfQNames" 
@@ -572,7 +572,7 @@
    <simpleType name="listOfAnyURIs">
       <list itemType="anyURI"/>
    </simpleType>
-  
+	
    <simpleType name="CreateResource">
       <restriction base="string">
          <enumeration value="always" />

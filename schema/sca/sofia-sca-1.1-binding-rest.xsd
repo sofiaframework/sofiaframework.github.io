@@ -33,8 +33,8 @@
         <complexContent>
             <extension base="sofia:Binding">
                 <sequence>
-                  <element name="response" type="sofia:RESTResponse" minOccurs="0" maxOccurs="1"/>
-                  <element ref="sofia:http-headers" minOccurs="0" maxOccurs="1"/>
+                	<element name="response" type="sofia:RESTResponse" minOccurs="0" maxOccurs="1"/>
+                	<element ref="sofia:http-headers" minOccurs="0" maxOccurs="1"/>
                     <!-- any namespace="##targetNamespace" processContents="lax" minOccurs="0"
                          maxOccurs="unbounded"/ -->
                 </sequence>
@@ -54,7 +54,7 @@
 
     <complexType name="HTTPHeadersType">
         <sequence>
-          <element ref="sofia:header" minOccurs="0" maxOccurs="unbounded"/>
+        	<element ref="sofia:header" minOccurs="0" maxOccurs="unbounded"/>
         </sequence>
     </complexType>
 
@@ -65,7 +65,7 @@
         <attribute name="value" type="string" use="required" />
     </complexType>
 
-  <element name="header" type="sofia:HTTPHeaderType" />
+	<element name="header" type="sofia:HTTPHeaderType" />
 
     <!--  wire formats -->
     <complexType name="WireFormatJSONType">

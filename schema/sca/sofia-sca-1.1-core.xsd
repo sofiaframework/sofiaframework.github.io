@@ -29,7 +29,7 @@
          <extension base="sca:CommonExtensionBase">
             <sequence>
                <element ref="sofia:wireFormat" minOccurs="0" maxOccurs="1" />
-               <element ref="sofia:operationSelector" minOccurs="0" 
+               <element ref="sofia:operationSelector" minOccurs="0"
                         maxOccurs="1" />
                <element ref="sca:requires" minOccurs="0" 
                         maxOccurs="unbounded"/>
@@ -51,10 +51,10 @@
    <complexType name="Implementation" abstract="true">
       <complexContent>
          <extension base="sca:CommonExtensionBase">
-          <choice minOccurs="0" maxOccurs="unbounded">
-             <element ref="sca:requires"/>
-             <element ref="sca:policySetAttachment"/>
-          </choice>     
+	        <choice minOccurs="0" maxOccurs="unbounded">
+	           <element ref="sca:requires"/>
+	           <element ref="sca:policySetAttachment"/>
+	        </choice>     
             <attribute name="requires" type="sca:listOfQNames" 
                        use="optional"/>
             <attribute name="policySets" type="sca:listOfQNames" 

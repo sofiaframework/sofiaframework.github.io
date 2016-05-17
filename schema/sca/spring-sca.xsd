@@ -21,28 +21,37 @@
     attributeFormDefault="unqualified" elementFormDefault="qualified"
     targetNamespace="http://www.springframework.org/schema/sca">
 
-    <xsd:element name="reference" type="ReferenceType" />
-
-    <xsd:complexType name="ReferenceType">
-        <xsd:sequence>
-            <xsd:element name="callback" type="CallBackType" minOccurs="0" maxOccurs="1" />
-        </xsd:sequence>
-        <xsd:attribute name="name" use="required">
-            <xsd:simpleType>
-                <xsd:restriction base="xsd:string" />
-            </xsd:simpleType>
-        </xsd:attribute>
-        <xsd:attribute name="type" use="required">
-            <xsd:simpleType>
-                <xsd:restriction base="xsd:string" />
-            </xsd:simpleType>
-        </xsd:attribute>
-        <xsd:attribute name="default" use="optional">
-            <xsd:simpleType>
-                <xsd:restriction base="xsd:string" />
-            </xsd:simpleType>
-        </xsd:attribute>
-    </xsd:complexType>
+    <xsd:element name="reference">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="callback" type="CallBackType" minOccurs="0" maxOccurs="1" />
+            </xsd:sequence>
+            <xsd:attribute name="name" use="required">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string" />
+                </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="type" use="required">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string" />
+                </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="default" use="optional">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string" />
+                </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="multiplicity" use="optional" default="1..1">
+                <!-- Miscellaneous simple type definitions -->
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="1..1"/>
+                        <xsd:enumeration value="1..n"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
 
     <xsd:element name="producer">
         <xsd:complexType>
@@ -84,28 +93,28 @@
         </xsd:complexType>
     </xsd:element>
 
-    <xsd:element name="service" type="ServiceType" />
-
-    <xsd:complexType name="ServiceType">
-        <xsd:sequence>
-            <xsd:element name="callback" type="CallBackType" minOccurs="0" maxOccurs="1" />
-        </xsd:sequence>
-        <xsd:attribute name="name" use="required">
-            <xsd:simpleType>
-                <xsd:restriction base="xsd:string" />
-            </xsd:simpleType>
-        </xsd:attribute>
-        <xsd:attribute name="type" use="required">
-            <xsd:simpleType>
-                <xsd:restriction base="xsd:string" />
-            </xsd:simpleType>
-        </xsd:attribute>
-        <xsd:attribute name="target" use="required">
-            <xsd:simpleType>
-                <xsd:restriction base="xsd:string" />
-            </xsd:simpleType>
-        </xsd:attribute>
-    </xsd:complexType>
+    <xsd:element name="service">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="callback" type="CallBackType" minOccurs="0" maxOccurs="1" />
+            </xsd:sequence>
+            <xsd:attribute name="name" use="required">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string" />
+                </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="type" use="required">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string" />
+                </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="target" use="required">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string" />
+                </xsd:simpleType>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
 
     <xsd:element name="consumer">
         <xsd:complexType>

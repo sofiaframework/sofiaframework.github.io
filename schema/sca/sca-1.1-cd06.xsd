@@ -18,14 +18,12 @@
    <include schemaLocation="sca-implementation-c-1.1-cd06.xsd"/>
    <include schemaLocation="sca-implementation-bpel-1.1-cd03.xsd"/>
    <include schemaLocation="sca-implementation-spring-1.1-cd01.xsd"/>
-
+   
    <!-- [rfeng] Added by Tuscany -->
    <include schemaLocation="sca-jee-1.1-wd03.xsd"/>
-
-   <!-- Remove it because violate UPA -->
-   <!-- WS reference EndpointReference which extend SCA Binding and use another namespace  -->
-   <!--<include schemaLocation="sca-binding-ws-1.1-cd04-rev2.xsd"/>
-   <include schemaLocation="sca-binding-ws-callback-1.1-cd04-rev1.xsd"/>-->
+   
+   <include schemaLocation="sca-binding-ws-1.1-cd04-rev2.xsd"/>
+   <include schemaLocation="sca-binding-ws-callback-1.1-cd04-rev1.xsd"/>
    <include schemaLocation="sca-binding-jms-1.1-csd05.xsd"/>
    <include schemaLocation="sca-binding-jca-1.1-cd04-rev2.xsd"/>   
    <include schemaLocation="sca-binding-sca-1.1-cd06.xsd"/>
